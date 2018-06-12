@@ -2,7 +2,7 @@
 
 'use strict'
 
-const tymly = require('tymly')
+const tymly = require('@wmfs/tymly')
 const path = require('path')
 const expect = require('chai').expect
 const assert = require('chai').assert
@@ -32,8 +32,8 @@ describe('notifications tymly-users-plugin tests', function () {
       {
         pluginPaths: [
           path.resolve(__dirname, './../lib'),
-          require.resolve('tymly-pg-plugin'),
-          require.resolve('tymly-solr-plugin')
+          require.resolve('@wmfs/tymly-pg-plugin'),
+          require.resolve('@wmfs/tymly-solr-plugin')
         ]
       },
       function (err, tymlyServices) {

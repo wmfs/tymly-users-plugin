@@ -1,8 +1,23 @@
 {
-  "name": "tymly-users-plugin",
-  "description": "Plugin which handles interactions to do with a user",
-  "version": "0.0.3",
-  "author": "Meena Hoda",
+  "name": "@wmfs/tymly-users-plugin",
+  "version": "0.0.0-semantically-released",
+  "description": "Plugin which handles interactions to do with a user for Tymly framework",
+  "homepage": "https://github.com/wmfs/tymly-users-plugin#readme",
+  "author": "West Midlands Fire Service",
+  "keywords": [
+    "tymly",
+    "plugin",
+    "user",
+    "interaction"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wmfs/tymly-users-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wmfs/tymly-users-plugin/issues"
+  },
   "main": "./lib/index.js",
   "dependencies": {
     "debug": "3.1.0",
@@ -14,24 +29,29 @@
   },
   "devDependencies": {
     "chai": "4.1.2",
-    "hl-pg-client": "^0.0.2",
+    "codecov": "3.0.2",
+    "cz-conventional-changelog": "2.1.0",
     "mocha": "5.2.0",
+    "nyc": "12.0.2",
+    "semantic-release": "^15.5.2",
     "standard": "11.0.1",
-    "tymly": "^0.0.17",
-    "tymly-forms-plugin": "0.0.8",
-    "tymly-pg-plugin": "^0.0.8",
-    "tymly-solr-plugin": "^0.0.6"
+    "@wmfs/hl-pg-client": "1.1.0",
+    "@wmfs/tymly": "1.0.1",
+    "@wmfs/tymly-pg-plugin": "1.0.0",
+    "@wmfs/tymly-solr-plugin": "1.0.0"
   },
   "scripts": {
     "lint": "standard",
-    "test": "standard && mocha"
+    "test": "nyc mocha && standard",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wmfs/tymly"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
-  "bugs": {
-    "url": "https://github.com/wmfs/tymly/issues"
+  "publishConfig": {
+    "access": "public"
   }
 }
