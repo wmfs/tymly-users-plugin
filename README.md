@@ -1,5 +1,5 @@
 # tymly-users-plugin
-[![Tymly Package](https://img.shields.io/badge/tymly-package-blue.svg)](https://tymly.io/)
+[![Tymly Plugin](https://img.shields.io/badge/tymly-plugin-blue.svg)](https://tymly.io/)
 [![npm (scoped)](https://img.shields.io/npm/v/@wmfs/tymly-users-plugin.svg)](https://www.npmjs.com/package/@wmfs/tymly-users-plugin)
 [![Build Status](https://travis-ci.org/wmfs/tymly-users-plugin.svg?branch=master)](https://travis-ci.org/wmfs/tymly-users-plugin)
 [![codecov](https://codecov.io/gh/wmfs/tymly-users-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/wmfs/tymly-users-plugin)
