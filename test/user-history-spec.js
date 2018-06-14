@@ -38,24 +38,20 @@ describe('user history tymly-users-plugin tests', function () {
     )
   })
 
-  it('should start the state machine to get user history', done => {
-    statebox.startExecution(
+  it('should start the state machine to get user history', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       GET_USER_HISTORY_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-
-        expect(executionDescription.currentStateName).to.eql('GetUserHistory')
-        expect(executionDescription.currentResource).to.eql('module:getUserHistory')
-        expect(executionDescription.stateMachineName).to.eql(GET_USER_HISTORY_STATE_MACHINE)
-        expect(executionDescription.status).to.eql('SUCCEEDED')
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('GetUserHistory')
+    expect(executionDescription.currentResource).to.eql('module:getUserHistory')
+    expect(executionDescription.stateMachineName).to.eql(GET_USER_HISTORY_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
   })
 
   it('should shut down Tymly nicely', async () => {

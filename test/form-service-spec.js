@@ -44,12 +44,11 @@ describe('Form Service tymly-users-plugin tests', function () {
     )
   })
 
-  it('should check the properties of the forms', (done) => {
+  it('should check the properties of the forms', () => {
     expect(Object.keys(forms.forms).includes('test_people')).to.eql(true)
-    done()
   })
 
-  it('should check the properties of the storage model', (done) => {
+  it('should check the properties of the storage model', () => {
     expect(Object.keys(storage.models).includes('test_people')).to.eql(true)
     expect(storage.models['test_people'].propertyIds).to.eql(['firstName',
       'lastName',
@@ -59,22 +58,19 @@ describe('Form Service tymly-users-plugin tests', function () {
       'avatar',
       'favouriteColour',
       'id'])
-    done()
   })
 
-  it('should check the state machine', (done) => {
+  it('should check the state machine', () => {
     expect(statebox.statebox.options.blueprintComponents.stateMachines['test_people_1_0'].Comment).to.eql('A bunch of people.')
-    done()
   })
 
-  it('should clean up the generated files', (done) => {
+  it('should clean up the generated files', () => {
     fs.unlinkSync(path.resolve(__dirname, 'fixtures', 'people-blueprint', 'forms', 'people.json'))
     fs.unlinkSync(path.resolve(__dirname, 'fixtures', 'people-blueprint', 'models', 'people.json'))
     fs.unlinkSync(path.resolve(__dirname, 'fixtures', 'people-blueprint', 'state-machines', 'people.json'))
     fs.unlinkSync(path.resolve(__dirname, 'fixtures', 'people-blueprint', 'forms', 'cats.json'))
     fs.unlinkSync(path.resolve(__dirname, 'fixtures', 'people-blueprint', 'state-machines', 'cats.json'))
     fs.rmdirSync(path.resolve(__dirname, 'fixtures', 'people-blueprint', 'state-machines'))
-    done()
   })
 
   it('should clean up the test resources', () => {

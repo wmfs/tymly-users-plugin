@@ -41,33 +41,30 @@ describe('favourites tymly-users-plugin tests', function () {
     )
   })
 
-  it('should create the test resources', function () {
+  it('should create the test resources', () => {
     return sqlScriptRunner('./db-scripts/favourites/setup.sql', client)
   })
 
-  it('should get test-user\'s favourites', done => {
-    statebox.startExecution(
+  it('should get test-user\'s favourites', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       GET_FAVOURITE_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.currentStateName).to.eql('GetFavouriteStartableNames')
-        expect(executionDescription.currentResource).to.eql('module:getFavouriteStartableNames')
-        expect(executionDescription.stateMachineName).to.eql(GET_FAVOURITE_STATE_MACHINE)
-        expect(executionDescription.status).to.eql('SUCCEEDED')
-        expect(executionDescription.ctx.results.includes('notifications')).to.eql(true)
-        expect(executionDescription.ctx.results.includes('settings')).to.eql(true)
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('GetFavouriteStartableNames')
+    expect(executionDescription.currentResource).to.eql('module:getFavouriteStartableNames')
+    expect(executionDescription.stateMachineName).to.eql(GET_FAVOURITE_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
+    expect(executionDescription.ctx.results.includes('notifications')).to.eql(true)
+    expect(executionDescription.ctx.results.includes('settings')).to.eql(true)
   })
 
-  it('should update test-user\'s favourites', done => {
-    statebox.startExecution(
+  it('should update test-user\'s favourites', async () => {
+    const executionDescription = await statebox.startExecution(
       {
         stateMachineNames: '["wmfs_claimAnExpense_1_0", "wmfs_reportHydrantDefect_1_0", "notifications"]'
       },
@@ -75,41 +72,35 @@ describe('favourites tymly-users-plugin tests', function () {
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.currentStateName).to.eql('SetFavouriteStartableNames')
-        expect(executionDescription.currentResource).to.eql('module:setFavouriteStartableNames')
-        expect(executionDescription.stateMachineName).to.eql(SET_FAVOURITE_STATE_MACHINE)
-        expect(executionDescription.status).to.eql('SUCCEEDED')
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('SetFavouriteStartableNames')
+    expect(executionDescription.currentResource).to.eql('module:setFavouriteStartableNames')
+    expect(executionDescription.stateMachineName).to.eql(SET_FAVOURITE_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
   })
-  it('should ensure test-user\'s applied favourites are present in DB', done => {
-    statebox.startExecution(
+  it('should ensure test-user\'s applied favourites are present in DB', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       GET_FAVOURITE_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.currentStateName).to.eql('GetFavouriteStartableNames')
-        expect(executionDescription.currentResource).to.eql('module:getFavouriteStartableNames')
-        expect(executionDescription.stateMachineName).to.eql(GET_FAVOURITE_STATE_MACHINE)
-        expect(executionDescription.status).to.eql('SUCCEEDED')
-        expect(executionDescription.ctx.results.length).to.eql(3)
-        expect(executionDescription.ctx.results.includes('wmfs_claimAnExpense_1_0')).to.eql(true)
-        expect(executionDescription.ctx.results.includes('wmfs_reportHydrantDefect_1_0')).to.eql(true)
-        expect(executionDescription.ctx.results.includes('notifications')).to.eql(true)
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('GetFavouriteStartableNames')
+    expect(executionDescription.currentResource).to.eql('module:getFavouriteStartableNames')
+    expect(executionDescription.stateMachineName).to.eql(GET_FAVOURITE_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
+    expect(executionDescription.ctx.results.length).to.eql(3)
+    expect(executionDescription.ctx.results.includes('wmfs_claimAnExpense_1_0')).to.eql(true)
+    expect(executionDescription.ctx.results.includes('wmfs_reportHydrantDefect_1_0')).to.eql(true)
+    expect(executionDescription.ctx.results.includes('notifications')).to.eql(true)
   })
 
-  it('should tear down the test resources', function () {
+  it('should tear down the test resources', () => {
     return sqlScriptRunner('./db-scripts/cleanup.sql', client)
   })
 

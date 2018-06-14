@@ -42,8 +42,8 @@ describe('watched-boards tymly-users-plugin tests', function () {
     )
   })
 
-  it('should watch the board', done => {
-    statebox.startExecution(
+  it('should watch the board', async () => {
+    const executionDescription = await statebox.startExecution(
       {
         stateMachineName: 'wmfs_incidentSummary_1_0',
         title: 'Incident 1/1999',
@@ -59,47 +59,40 @@ describe('watched-boards tymly-users-plugin tests', function () {
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.currentStateName).to.eql('DeltaReindex')
-        expect(executionDescription.currentResource).to.eql('module:deltaReindex')
-        expect(executionDescription.stateMachineName).to.eql(WATCH_BOARD_STATE_MACHINE)
-        expect(executionDescription.status).to.eql('SUCCEEDED')
-        expect(Object.keys(executionDescription.ctx).includes('subscriptionId')).to.eql(true)
-        expect(Object.keys(executionDescription.ctx).includes('startedWatching')).to.eql(true)
-        expect(Object.keys(executionDescription.ctx).includes('feedName')).to.eql(true)
-        expect(executionDescription.ctx.feedName).to.eql('wmfs_incidentSummary_1_0|1|1999')
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('DeltaReindex')
+    expect(executionDescription.currentResource).to.eql('module:deltaReindex')
+    expect(executionDescription.stateMachineName).to.eql(WATCH_BOARD_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
+    expect(Object.keys(executionDescription.ctx).includes('subscriptionId')).to.eql(true)
+    expect(Object.keys(executionDescription.ctx).includes('startedWatching')).to.eql(true)
+    expect(Object.keys(executionDescription.ctx).includes('feedName')).to.eql(true)
+    expect(executionDescription.ctx.feedName).to.eql('wmfs_incidentSummary_1_0|1|1999')
   })
 
-  it('should get the watched board to validate the previous test', done => {
-    statebox.startExecution(
+  it('should get the watched board to validate the previous test', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       GET_WATCHED_BOARDS_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-
-        expect(executionDescription.currentStateName).to.eql('GetWatchedBoards')
-        expect(executionDescription.currentResource).to.eql('module:getWatchedBoards')
-        expect(executionDescription.stateMachineName).to.eql(GET_WATCHED_BOARDS_STATE_MACHINE)
-        expect(executionDescription.status).to.eql('SUCCEEDED')
-        expect(executionDescription.ctx.watchCategories.incidents['Incident Summary'].total).to.eql(1)
-        expect(executionDescription.ctx.watchCategories.incidents['Incident Summary'].subscriptions[0].feedName).to.eql('wmfs_incidentSummary_1_0|1|1999')
-        subscriptionId = executionDescription.ctx.watchCategories.incidents['Incident Summary'].subscriptions[0].subscriptionId
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('GetWatchedBoards')
+    expect(executionDescription.currentResource).to.eql('module:getWatchedBoards')
+    expect(executionDescription.stateMachineName).to.eql(GET_WATCHED_BOARDS_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
+    expect(executionDescription.ctx.watchCategories.incidents['Incident Summary'].total).to.eql(1)
+    expect(executionDescription.ctx.watchCategories.incidents['Incident Summary'].subscriptions[0].feedName).to.eql('wmfs_incidentSummary_1_0|1|1999')
+    subscriptionId = executionDescription.ctx.watchCategories.incidents['Incident Summary'].subscriptions[0].subscriptionId
   })
 
-  it('should watch another board in the same category', done => {
-    statebox.startExecution(
+  it('should watch another board in the same category', async () => {
+    const executionDescription = await statebox.startExecution(
       {
         stateMachineName: 'wmfs_incidentSummary_1_0',
         title: 'Incident 12/2015',
@@ -115,24 +108,21 @@ describe('watched-boards tymly-users-plugin tests', function () {
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.currentStateName).to.eql('DeltaReindex')
-        expect(executionDescription.currentResource).to.eql('module:deltaReindex')
-        expect(executionDescription.stateMachineName).to.eql(WATCH_BOARD_STATE_MACHINE)
-        expect(executionDescription.status).to.eql('SUCCEEDED')
-        expect(Object.keys(executionDescription.ctx).includes('subscriptionId')).to.eql(true)
-        expect(Object.keys(executionDescription.ctx).includes('startedWatching')).to.eql(true)
-        expect(Object.keys(executionDescription.ctx).includes('feedName')).to.eql(true)
-        expect(executionDescription.ctx.feedName).to.eql('wmfs_incidentSummary_1_0|12|2015')
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('DeltaReindex')
+    expect(executionDescription.currentResource).to.eql('module:deltaReindex')
+    expect(executionDescription.stateMachineName).to.eql(WATCH_BOARD_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
+    expect(Object.keys(executionDescription.ctx).includes('subscriptionId')).to.eql(true)
+    expect(Object.keys(executionDescription.ctx).includes('startedWatching')).to.eql(true)
+    expect(Object.keys(executionDescription.ctx).includes('feedName')).to.eql(true)
+    expect(executionDescription.ctx.feedName).to.eql('wmfs_incidentSummary_1_0|12|2015')
   })
 
-  it('should watch another board in another category', done => {
-    statebox.startExecution(
+  it('should watch another board in another category', async () => {
+    const executionDescription = await statebox.startExecution(
       {
         stateMachineName: 'wmfs_propertyViewer_1_0',
         title: 'URN #4',
@@ -147,46 +137,39 @@ describe('watched-boards tymly-users-plugin tests', function () {
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.currentStateName).to.eql('DeltaReindex')
-        expect(executionDescription.currentResource).to.eql('module:deltaReindex')
-        expect(executionDescription.stateMachineName).to.eql(WATCH_BOARD_STATE_MACHINE)
-        expect(executionDescription.status).to.eql('SUCCEEDED')
-        expect(Object.keys(executionDescription.ctx).includes('subscriptionId')).to.eql(true)
-        expect(Object.keys(executionDescription.ctx).includes('startedWatching')).to.eql(true)
-        expect(Object.keys(executionDescription.ctx).includes('feedName')).to.eql(true)
-        expect(executionDescription.ctx.feedName).to.eql('wmfs_propertyViewer_1_0|4')
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('DeltaReindex')
+    expect(executionDescription.currentResource).to.eql('module:deltaReindex')
+    expect(executionDescription.stateMachineName).to.eql(WATCH_BOARD_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
+    expect(Object.keys(executionDescription.ctx).includes('subscriptionId')).to.eql(true)
+    expect(Object.keys(executionDescription.ctx).includes('startedWatching')).to.eql(true)
+    expect(Object.keys(executionDescription.ctx).includes('feedName')).to.eql(true)
+    expect(executionDescription.ctx.feedName).to.eql('wmfs_propertyViewer_1_0|4')
   })
 
-  it('should get multiple watched boards', done => {
-    statebox.startExecution(
+  it('should get multiple watched boards', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       GET_WATCHED_BOARDS_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-
-        expect(executionDescription.currentStateName).to.eql('GetWatchedBoards')
-        expect(executionDescription.currentResource).to.eql('module:getWatchedBoards')
-        expect(executionDescription.stateMachineName).to.eql(GET_WATCHED_BOARDS_STATE_MACHINE)
-        expect(executionDescription.ctx.watchCategories.incidents['Incident Summary'].total).to.eql(2)
-        expect(executionDescription.ctx.watchCategories.gazetteer['Property Viewer'].total).to.eql(1)
-        expect(executionDescription.status).to.eql('SUCCEEDED')
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('GetWatchedBoards')
+    expect(executionDescription.currentResource).to.eql('module:getWatchedBoards')
+    expect(executionDescription.stateMachineName).to.eql(GET_WATCHED_BOARDS_STATE_MACHINE)
+    expect(executionDescription.ctx.watchCategories.incidents['Incident Summary'].total).to.eql(2)
+    expect(executionDescription.ctx.watchCategories.gazetteer['Property Viewer'].total).to.eql(1)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
   })
 
-  it('should delete the watched board to validate the previous test', done => {
-    statebox.startExecution(
+  it('should delete the watched board to validate the previous test', async () => {
+    const executionDescription = await statebox.startExecution(
       {
         subscriptionId: subscriptionId
       },
@@ -194,27 +177,21 @@ describe('watched-boards tymly-users-plugin tests', function () {
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-
-        expect(executionDescription.currentStateName).to.eql('UnwatchBoard')
-        expect(executionDescription.currentResource).to.eql('module:unwatchBoard')
-        expect(executionDescription.stateMachineName).to.eql(UNWATCH_BOARD_STATE_MACHINE)
-        expect(executionDescription.status).to.eql('SUCCEEDED')
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('UnwatchBoard')
+    expect(executionDescription.currentResource).to.eql('module:unwatchBoard')
+    expect(executionDescription.stateMachineName).to.eql(UNWATCH_BOARD_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
   })
 
-  it('should check the board has been unwatched', done => {
-    client.query(`SELECT * FROM tymly.watched_boards where id = '${subscriptionId}'`, function (err, results) {
-      expect(results.rowCount).to.eql(0)
-      done(err)
-    })
+  it('should check the board has been unwatched', async () => {
+    const results = await client.query(`SELECT * FROM tymly.watched_boards where id = '${subscriptionId}'`)
+    expect(results.rowCount).to.eql(0)
   })
 
-  it('should tear down the test resources', function () {
+  it('should tear down the test resources', () => {
     return sqlScriptRunner('./db-scripts/cleanup.sql', client)
   })
 

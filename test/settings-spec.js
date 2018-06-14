@@ -43,42 +43,35 @@ describe('settings tymly-users-plugin tests', function () {
     )
   })
 
-  it('should create the test resources', function () {
+  it('should create the test resources', () => {
     return sqlScriptRunner('./db-scripts/settings/setup.sql', client)
   })
 
-  it('should get test-user\'s settings', done => {
-    statebox.startExecution(
+  it('should get test-user\'s settings', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       GET_SETTINGS_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        try {
-          expect(err).to.eql(null)
-          expect(executionDescription.currentStateName).to.eql('GetSettings')
-          expect(executionDescription.currentResource).to.eql('module:getSettings')
-          expect(executionDescription.stateMachineName).to.eql(GET_SETTINGS_STATE_MACHINE)
-          expect(executionDescription.status).to.eql('SUCCEEDED')
-          expect(executionDescription.ctx.userSettings.userId).to.eql('test-user')
-          expect(executionDescription.ctx.userSettings.categoryRelevance.length).to.eql(5)
-          expect(executionDescription.ctx.userSettings.categoryRelevance.includes('gazetteer')).to.eql(true)
-          expect(executionDescription.ctx.userSettings.categoryRelevance.includes('hr')).to.eql(true)
-          expect(executionDescription.ctx.userSettings.categoryRelevance.includes('hydrants')).to.eql(true)
-          expect(executionDescription.ctx.userSettings.categoryRelevance.includes('incidents')).to.eql(true)
-          expect(executionDescription.ctx.userSettings.categoryRelevance.includes('expenses')).to.eql(true)
-          done()
-        } catch (err) {
-          done(err)
-        }
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('GetSettings')
+    expect(executionDescription.currentResource).to.eql('module:getSettings')
+    expect(executionDescription.stateMachineName).to.eql(GET_SETTINGS_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
+    expect(executionDescription.ctx.userSettings.userId).to.eql('test-user')
+    expect(executionDescription.ctx.userSettings.categoryRelevance.length).to.eql(5)
+    expect(executionDescription.ctx.userSettings.categoryRelevance.includes('gazetteer')).to.eql(true)
+    expect(executionDescription.ctx.userSettings.categoryRelevance.includes('hr')).to.eql(true)
+    expect(executionDescription.ctx.userSettings.categoryRelevance.includes('hydrants')).to.eql(true)
+    expect(executionDescription.ctx.userSettings.categoryRelevance.includes('incidents')).to.eql(true)
+    expect(executionDescription.ctx.userSettings.categoryRelevance.includes('expenses')).to.eql(true)
   })
 
-  it('should update test-user\'s settings', done => {
-    statebox.startExecution(
+  it('should update test-user\'s settings', async () => {
+    const executionDescription = await statebox.startExecution(
       {
         categoryRelevance: '["incidents", "hr", "hydrants", "gazetteer", "expenses"]'
       },
@@ -86,93 +79,69 @@ describe('settings tymly-users-plugin tests', function () {
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        try {
-          expect(err).to.eql(null)
-          expect(executionDescription.currentStateName).to.eql('ApplySettings')
-          expect(executionDescription.currentResource).to.eql('module:applySettings')
-          expect(executionDescription.stateMachineName).to.eql(APPLY_SETTINGS_STATE_MACHINE)
-          expect(executionDescription.status).to.eql('SUCCEEDED')
-          done()
-        } catch (err) {
-          done(err)
-        }
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('ApplySettings')
+    expect(executionDescription.currentResource).to.eql('module:applySettings')
+    expect(executionDescription.stateMachineName).to.eql(APPLY_SETTINGS_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
   })
 
-  it('should ensure test-user\'s applied settings are present in DB', done => {
-    statebox.startExecution(
+  it('should ensure test-user\'s applied settings are present in DB', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       GET_SETTINGS_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        try {
-          expect(err).to.eql(null)
-          expect(executionDescription.currentStateName).to.eql('GetSettings')
-          expect(executionDescription.currentResource).to.eql('module:getSettings')
-          expect(executionDescription.stateMachineName).to.eql(GET_SETTINGS_STATE_MACHINE)
-          expect(executionDescription.status).to.eql('SUCCEEDED')
-          expect(executionDescription.ctx.userSettings.userId).to.eql('test-user')
-          expect(executionDescription.ctx.userSettings.categoryRelevance.length).to.eql(5)
-          expect(executionDescription.ctx.userSettings.categoryRelevance.includes('incidents')).to.eql(true)
-          expect(executionDescription.ctx.userSettings.categoryRelevance.includes('hr')).to.eql(true)
-          expect(executionDescription.ctx.userSettings.categoryRelevance.includes('hydrants')).to.eql(true)
-          expect(executionDescription.ctx.userSettings.categoryRelevance.includes('gazetteer')).to.eql(true)
-          expect(executionDescription.ctx.userSettings.categoryRelevance.includes('expenses')).to.eql(true)
-          done()
-        } catch (err) {
-          done(err)
-        }
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('GetSettings')
+    expect(executionDescription.currentResource).to.eql('module:getSettings')
+    expect(executionDescription.stateMachineName).to.eql(GET_SETTINGS_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
+    expect(executionDescription.ctx.userSettings.userId).to.eql('test-user')
+    expect(executionDescription.ctx.userSettings.categoryRelevance.length).to.eql(5)
+    expect(executionDescription.ctx.userSettings.categoryRelevance.includes('incidents')).to.eql(true)
+    expect(executionDescription.ctx.userSettings.categoryRelevance.includes('hr')).to.eql(true)
+    expect(executionDescription.ctx.userSettings.categoryRelevance.includes('hydrants')).to.eql(true)
+    expect(executionDescription.ctx.userSettings.categoryRelevance.includes('gazetteer')).to.eql(true)
+    expect(executionDescription.ctx.userSettings.categoryRelevance.includes('expenses')).to.eql(true)
   })
 
-  it('get default values for new-user\'s settings', done => {
-    statebox.startExecution(
+  it('get default values for new-user\'s settings', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       GET_SETTINGS_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE',
         userId: 'new-user'
-      },
-      (err, executionDescription) => {
-        try {
-          expect(err).to.eql(null)
-          expect(executionDescription.currentStateName).to.eql('GetSettings')
-          expect(executionDescription.currentResource).to.eql('module:getSettings')
-          expect(executionDescription.stateMachineName).to.eql(GET_SETTINGS_STATE_MACHINE)
-          expect(executionDescription.status).to.eql('SUCCEEDED')
-          expect(executionDescription.ctx.userSettings.userId).to.eql('new-user')
-          expect(executionDescription.ctx.userSettings.categoryRelevance).to.eql([])
-          done()
-        } catch (err) {
-          done(err)
-        }
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('GetSettings')
+    expect(executionDescription.currentResource).to.eql('module:getSettings')
+    expect(executionDescription.stateMachineName).to.eql(GET_SETTINGS_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('SUCCEEDED')
+    expect(executionDescription.ctx.userSettings.userId).to.eql('new-user')
+    expect(executionDescription.ctx.userSettings.categoryRelevance).to.eql([])
   })
 
-  it('should attempt to apply settings without passing anything in', done => {
-    statebox.startExecution(
+  it('should attempt to apply settings without passing anything in', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       APPLY_SETTINGS_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.status).to.eql('FAILED')
-        done()
       }
     )
+
+    expect(executionDescription.status).to.eql('FAILED')
   })
 
-  it('should tear down the test resources', function () {
+  it('should tear down the test resources', () => {
     return sqlScriptRunner('./db-scripts/cleanup.sql', client)
   })
 

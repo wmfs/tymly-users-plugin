@@ -47,43 +47,35 @@ describe('get-board-data tymly-users-plugin tests', function () {
     )
   })
 
-  it('should ensure each form has a shasum associated with it', (done) => {
-    console.log(Object.keys(formService.forms))
-    Object.keys(formService.forms).map((form) => {
+  it('should ensure each form has a shasum associated with it', () => {
+    Object.keys(formService.forms).forEach(form => {
       expect(formService.forms[form].shasum)
     })
-    done()
   })
 
-  it('should ensure each board has a shasum associated with it', (done) => {
-    console.log(Object.keys(boardService.boards))
-    Object.keys(boardService.boards).map((board) => {
+  it('should ensure each board has a shasum associated with it', () => {
+    Object.keys(boardService.boards).forEach(board => {
       expect(boardService.boards[board].shasum)
     })
-    done()
   })
 
-  it('insert some \'human\' test data', (done) => {
-    humanModel.create({
+  it('insert some \'human\' test data', async () => {
+    await humanModel.create({
       name: 'Alfred',
       age: '57'
     })
-      .then(() => done())
-      .catch(err => done(err))
   })
 
-  it('insert some \'animal\' test data', (done) => {
-    animalModel.create({
+  it('insert some \'animal\' test data', async () => {
+    await animalModel.create({
       name: 'Alfred',
       age: '2',
       type: 'dog'
     })
-      .then(() => done())
-      .catch(err => done(err))
   })
 
-  it('run state machine to get board data from one table', done => {
-    statebox.startExecution(
+  it('run state machine to get board data from one table', async () => {
+    const executionDescription = await statebox.startExecution(
       {
         boardKeys: {
           name: 'Alfred'
@@ -93,19 +85,15 @@ describe('get-board-data tymly-users-plugin tests', function () {
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        console.log(executionDescription)
-        expect(executionDescription.ctx.data.name).to.eql('Alfred')
-        expect(executionDescription.ctx.data.age).to.eql('57')
-        expect(err).to.eql(null)
-        done(err)
       }
     )
+
+    expect(executionDescription.ctx.data.name).to.eql('Alfred')
+    expect(executionDescription.ctx.data.age).to.eql('57')
   })
 
-  it('run state machine to get board data from two tables', done => {
-    statebox.startExecution(
+  it('run state machine to get board data from two tables', async () => {
+    const executionDescription = await statebox.startExecution(
       {
         boardKeys: {
           name: 'Alfred'
@@ -115,50 +103,40 @@ describe('get-board-data tymly-users-plugin tests', function () {
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        console.log(executionDescription.ctx.data)
-        expect(executionDescription.ctx.data.human.age).to.eql('57')
-        expect(executionDescription.ctx.data.animal.type).to.eql('dog')
-        expect(err).to.eql(null)
-        done(err)
       }
     )
+
+    expect(executionDescription.ctx.data.human.age).to.eql('57')
+    expect(executionDescription.ctx.data.animal.type).to.eql('dog')
   })
 
-  it('run state machine with no input - single', done => {
-    statebox.startExecution(
+  it('run state machine with no input - single', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       GET_SINGLE_BOARD_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.ctx.data).to.eql({})
-        done(err)
       }
     )
+
+    expect(executionDescription.ctx.data).to.eql({})
   })
 
-  it('run state machine with no input - multiple', done => {
-    statebox.startExecution(
+  it('run state machine with no input - multiple', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       GET_MULTIPLE_BOARDS_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.ctx.data).to.eql({})
-        done(err)
       }
     )
+
+    expect(executionDescription.ctx.data).to.eql({})
   })
 
-  it('should tear down the test resources', function () {
+  it('should tear down the test resources', () => {
     return sqlScriptRunner('./db-scripts/cleanup.sql', client)
   })
 

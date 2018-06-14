@@ -43,28 +43,25 @@ describe('awaitingUserInput state tests', function () {
     )
   })
 
-  it('should execute awaitingHumanInput state machine and expect defaults to come through', done => {
-    statebox.startExecution(
+  it('should execute awaitingHumanInput state machine and expect defaults to come through', async () => {
+    const executionDescription = await statebox.startExecution(
       {},
       HEARTBEAT_STATE_MACHINE,
       {
         sendResponse: 'AFTER_RESOURCE_CALLBACK.TYPE:awaitingHumanInput'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.currentStateName).to.eql('TestHeartbeat')
-        expect(executionDescription.currentResource).to.eql('module:awaitingHumanInput')
-        expect(executionDescription.stateMachineName).to.eql(HEARTBEAT_STATE_MACHINE)
-        expect(executionDescription.status).to.eql('RUNNING')
-        expect(executionDescription.ctx.requiredHumanInput.data.empNo).to.eql(0)
-        expect(executionDescription.ctx.requiredHumanInput.data.status).to.eql('Probationary')
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('TestHeartbeat')
+    expect(executionDescription.currentResource).to.eql('module:awaitingHumanInput')
+    expect(executionDescription.stateMachineName).to.eql(HEARTBEAT_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('RUNNING')
+    expect(executionDescription.ctx.requiredHumanInput.data.empNo).to.eql(0)
+    expect(executionDescription.ctx.requiredHumanInput.data.status).to.eql('Probationary')
   })
 
-  it('should overwrite any default values if config passed in', done => {
-    statebox.startExecution(
+  it('should overwrite any default values if config passed in', async () => {
+    const executionDescription = await statebox.startExecution(
       {
         someDefaultFormData: {
           empNo: 14345,
@@ -74,22 +71,19 @@ describe('awaitingUserInput state tests', function () {
       HEARTBEAT_STATE_MACHINE,
       {
         sendResponse: 'AFTER_RESOURCE_CALLBACK.TYPE:awaitingHumanInput'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.currentStateName).to.eql('TestHeartbeat')
-        expect(executionDescription.currentResource).to.eql('module:awaitingHumanInput')
-        expect(executionDescription.stateMachineName).to.eql(HEARTBEAT_STATE_MACHINE)
-        expect(executionDescription.status).to.eql('RUNNING')
-        expect(executionDescription.ctx.requiredHumanInput.data.empNo).to.eql(14345)
-        expect(executionDescription.ctx.requiredHumanInput.data.status).to.eql('Permanent')
-        done()
       }
     )
+
+    expect(executionDescription.currentStateName).to.eql('TestHeartbeat')
+    expect(executionDescription.currentResource).to.eql('module:awaitingHumanInput')
+    expect(executionDescription.stateMachineName).to.eql(HEARTBEAT_STATE_MACHINE)
+    expect(executionDescription.status).to.eql('RUNNING')
+    expect(executionDescription.ctx.requiredHumanInput.data.empNo).to.eql(14345)
+    expect(executionDescription.ctx.requiredHumanInput.data.status).to.eql('Permanent')
   })
 
-  it('should watch a board for this user', done => {
-    statebox.startExecution(
+  it('should watch a board for this user', async () => {
+    const executionDescription = await statebox.startExecution(
       {
         stateMachineName: 'test_getBoards_1_0',
         title: 'Incident 1/1999',
@@ -103,17 +97,14 @@ describe('awaitingUserInput state tests', function () {
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(executionDescription.ctx.feedName).to.eql('test_getBoards_1_0|1|1999')
-        done(err)
       }
     )
+
+    expect(executionDescription.ctx.feedName).to.eql('test_getBoards_1_0|1|1999')
   })
 
-  it('should check the required human input if the user is watching the board', done => {
-    statebox.startExecution(
+  it('should check the required human input if the user is watching the board', async () => {
+    const executionDescription = await statebox.startExecution(
       {
         boardKeys: {
           incidentNumber: 1,
@@ -124,19 +115,16 @@ describe('awaitingUserInput state tests', function () {
       {
         sendResponse: 'AFTER_RESOURCE_CALLBACK.TYPE:awaitingHumanInput',
         userId: 'test-user'
-      },
-      (err, executionDescription) => {
-        expect(err).to.eql(null)
-        expect(Object.keys(executionDescription.ctx.requiredHumanInput)
-          .includes('watchBoardSubscriptionId'))
-        expect(executionDescription.ctx.requiredHumanInput.feedName)
-          .to.eql('test_getBoards_1_0|1|1999')
-        done(err)
       }
     )
+
+    expect(Object.keys(executionDescription.ctx.requiredHumanInput)
+      .includes('watchBoardSubscriptionId'))
+    expect(executionDescription.ctx.requiredHumanInput.feedName)
+      .to.eql('test_getBoards_1_0|1|1999')
   })
 
-  it('should tear down the test resources', function () {
+  it('should tear down the test resources', () => {
     return sqlScriptRunner('./db-scripts/cleanup.sql', client)
   })
 
