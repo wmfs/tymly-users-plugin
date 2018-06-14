@@ -23,7 +23,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     }
   })
 
-  it('should create some basic tymly services', function (done) {
+  it('should create some basic tymly services', done => {
     tymly.boot(
       {
         pluginPaths: [
@@ -32,7 +32,7 @@ describe('todo changes tymly-users-plugin tests', function () {
           require.resolve('@wmfs/tymly-solr-plugin')
         ]
       },
-      function (err, tymlyServices) {
+      (err, tymlyServices) => {
         expect(err).to.eql(null)
         statebox = tymlyServices.statebox
         todos = tymlyServices.storage.models['tymly_todos']
@@ -43,7 +43,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     )
   })
 
-  it('should create todo entry for a user', function (done) {
+  it('should create todo entry for a user', done => {
     statebox.startExecution(
       {
         todoTitle: 'ToDo Expense Claim',
@@ -57,7 +57,7 @@ describe('todo changes tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'todo-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
           expect(executionDescription.currentStateName).to.eql('CreateTodoEntry')
@@ -72,7 +72,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     )
   })
 
-  it('should ensure the created todo is present', function (done) {
+  it('should ensure the created todo is present', done => {
     todos.findById(
       '5200987c-bb03-11e7-abc4-cec278b6b111',
       function (err, doc) {
@@ -84,7 +84,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     )
   })
 
-  it('should update a todo entry for a user', function (done) {
+  it('should update a todo entry for a user', done => {
     statebox.startExecution(
       {
         todoTitle: 'ToDo Expense Claim',
@@ -98,7 +98,7 @@ describe('todo changes tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'todo-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
           expect(executionDescription.currentStateName).to.eql('CreateTodoEntry')
@@ -113,7 +113,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     )
   })
 
-  it('should ensure the created todo is present', function (done) {
+  it('should ensure the created todo is present', done => {
     todos.findById(
       '5200987c-bb03-11e7-abc4-cec278b6b111',
       function (err, doc) {
@@ -125,7 +125,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     )
   })
 
-  it('should remove the todo created for test', function (done) {
+  it('should remove the todo created for test', done => {
     todos.destroyById(
       '5200987c-bb03-11e7-abc4-cec278b6b111',
       (err) => {
@@ -135,7 +135,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     )
   })
 
-  it('should ensure created todo is removed', function (done) {
+  it('should ensure created todo is removed', done => {
     todos.findById(
       '5200987c-bb03-11e7-abc4-cec278b6b111',
       function (err, doc) {
@@ -161,7 +161,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     return sqlScriptRunner('./db-scripts/todos/setup.sql', client)
   })
 
-  it('should start the state machine to get todo changes with no client to do\'s', function (done) {
+  it('should start the state machine to get todo changes with no client to do\'s', done => {
     statebox.startExecution(
       {
         clientTodos: [] // for getTodos
@@ -171,7 +171,7 @@ describe('todo changes tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('GetTodoChanges')
         expect(executionDescription.currentResource).to.eql('module:getTodoChanges')
@@ -188,7 +188,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     )
   })
 
-  it('should start the state machine to get todo changes', function (done) {
+  it('should start the state machine to get todo changes', done => {
     statebox.startExecution(
       {
         clientTodos: [
@@ -204,7 +204,7 @@ describe('todo changes tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('GetTodoChanges')
         expect(executionDescription.currentResource).to.eql('module:getTodoChanges')
@@ -227,7 +227,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     )
   })
 
-  it('should ensure a todo is present in the list in preparation to remove it', function (done) {
+  it('should ensure a todo is present in the list in preparation to remove it', done => {
     todos.findById(
       '5200987c-bb03-11e7-abc4-cec278b6b50a',
       function (err, doc) {
@@ -239,7 +239,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     )
   })
 
-  it('should be able to remove a todo entry from the list', function (done) {
+  it('should be able to remove a todo entry from the list', done => {
     statebox.startExecution(
       {
         todoId: '5200987c-bb03-11e7-abc4-cec278b6b50a'
@@ -249,7 +249,7 @@ describe('todo changes tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.status).to.eql('SUCCEEDED')
         done()
@@ -257,7 +257,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     )
   })
 
-  it('should fail to find the removed todo', function (done) {
+  it('should fail to find the removed todo', done => {
     todos.findById(
       '5200987c-bb03-11e7-abc4-cec278b6b50a',
       function (err, doc) {
@@ -268,7 +268,7 @@ describe('todo changes tymly-users-plugin tests', function () {
     )
   })
 
-  it('should fail to find a todo that doesn\'t exist', function (done) {
+  it('should fail to find a todo that doesn\'t exist', done => {
     statebox.startExecution(
       {
         todoId: 'FAILHERE'
@@ -278,7 +278,7 @@ describe('todo changes tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.status).to.eql('FAILED')
         expect(executionDescription.errorCode).to.eql('removeTodoFail')

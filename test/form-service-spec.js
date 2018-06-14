@@ -20,7 +20,7 @@ describe('Form Service tymly-users-plugin tests', function () {
     }
   })
 
-  it('should create some basic tymly services', function (done) {
+  it('should create some basic tymly services', done => {
     tymly.boot(
       {
         blueprintPaths: [
@@ -32,7 +32,7 @@ describe('Form Service tymly-users-plugin tests', function () {
           require.resolve('@wmfs/tymly-solr-plugin')
         ]
       },
-      function (err, tymlyServices) {
+      (err, tymlyServices) => {
         expect(err).to.eql(null)
         tymlyService = tymlyServices.tymly
         storage = tymlyServices.storage

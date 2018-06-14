@@ -27,7 +27,7 @@ describe('notifications tymly-users-plugin tests', function () {
     }
   })
 
-  it('should create some basic tymly services', function (done) {
+  it('should create some basic tymly services', done => {
     tymly.boot(
       {
         pluginPaths: [
@@ -36,7 +36,7 @@ describe('notifications tymly-users-plugin tests', function () {
           require.resolve('@wmfs/tymly-solr-plugin')
         ]
       },
-      function (err, tymlyServices) {
+      (err, tymlyServices) => {
         expect(err).to.eql(null)
         statebox = tymlyServices.statebox
         tymlyService = tymlyServices.tymly
@@ -50,7 +50,7 @@ describe('notifications tymly-users-plugin tests', function () {
     return sqlScriptRunner('./db-scripts/notifications/setup.sql', client)
   })
 
-  it('should start the state resource execution to retrieve some notifications for a specified user', function (done) {
+  it('should start the state resource execution to retrieve some notifications for a specified user', done => {
     statebox.startExecution(
       {
         limit: limit
@@ -60,7 +60,7 @@ describe('notifications tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('GetNotifications')
         expect(executionDescription.currentResource).to.eql('module:getNotifications')
@@ -74,7 +74,7 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
-  it('should check the context returned when passing a \'startFrom\'', function (done) {
+  it('should check the context returned when passing a \'startFrom\'', done => {
     statebox.startExecution(
       {
         startFrom: startFrom,
@@ -85,7 +85,7 @@ describe('notifications tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('GetNotifications')
         expect(executionDescription.currentResource).to.eql('module:getNotifications')
@@ -99,7 +99,7 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
-  it('should acknowledge one notification', function (done) {
+  it('should acknowledge one notification', done => {
     statebox.startExecution(
       {
         notificationsToMark: notificationsToMark
@@ -109,7 +109,7 @@ describe('notifications tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('AcknowledgeNotifications')
         expect(executionDescription.currentResource).to.eql('module:acknowledgeNotifications')
@@ -120,7 +120,7 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
-  it('should check the notification is acknowledged', function (done) {
+  it('should check the notification is acknowledged', done => {
     client.query(
       `select * from tymly.notifications where id = '${notificationsToMark[0]}'`,
       (err, result) => {
@@ -133,7 +133,7 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
-  it('should reset the acknowledged notification for later use', function (done) {
+  it('should reset the acknowledged notification for later use', done => {
     client.query(
       `update tymly.notifications set acknowledged = null where id = '${notificationsToMark[0]}'`,
       (err) => {
@@ -142,7 +142,7 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
-  it('should manually create a new notification', function (done) {
+  it('should manually create a new notification', done => {
     statebox.startExecution(
       {
         title: 'testNotification',
@@ -154,7 +154,7 @@ describe('notifications tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user-1'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('CreateNotification')
         expect(executionDescription.currentResource).to.eql('module:createNotification')
@@ -164,7 +164,7 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
-  it('should check the notification has been manually created', function (done) {
+  it('should check the notification has been manually created', done => {
     client.query(
       `select * from tymly.notifications where user_id = 'test-user-1'`,
       (err, result) => {
@@ -178,7 +178,7 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
-  it('should acknowledge multiple notifications', function (done) {
+  it('should acknowledge multiple notifications', done => {
     statebox.startExecution(
       {
         notificationsToMark: notificationsToMark
@@ -188,7 +188,7 @@ describe('notifications tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('AcknowledgeNotifications')
         expect(executionDescription.currentResource).to.eql('module:acknowledgeNotifications')
@@ -199,7 +199,7 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
-  it('should check the first notification has been acknowledged', function (done) {
+  it('should check the first notification has been acknowledged', done => {
     client.query(
       `select * from tymly.notifications where id = '${notificationsToMark[0]}'`,
       (err, result) => {
@@ -210,7 +210,7 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
-  it('should check the second notification has been acknowledged', function (done) {
+  it('should check the second notification has been acknowledged', done => {
     client.query(
       `select * from tymly.notifications where id = '${notificationsToMark[1]}'`,
       (err, result) => {
@@ -221,17 +221,17 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
-  it('should attempt to acknowledge notifications that do not exist', function (done) {
+  it('should attempt to acknowledge notifications that do not exist', done => {
     statebox.startExecution(
       {
-        notificationsToMark: [1,2,3,4]
+        notificationsToMark: [1, 2, 3, 4]
       },
       ACKNOWLEDGE_NOTIFICATIONS_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.status).to.eql('FAILED')
         done()
@@ -239,12 +239,12 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
-  it('should attempt to create a notification without passing anything in', function (done) {
+  it('should attempt to create a notification without passing anything in', done => {
     statebox.startExecution(
       {},
       CREATE_NOTIFICATIONS_STATE_MACHINE,
       {sendResponse: 'COMPLETE'},
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.status).to.eql('FAILED')
         done()

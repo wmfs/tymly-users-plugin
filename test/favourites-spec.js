@@ -22,7 +22,7 @@ describe('favourites tymly-users-plugin tests', function () {
     }
   })
 
-  it('should create some basic tymly services', function (done) {
+  it('should create some basic tymly services', done => {
     tymly.boot(
       {
         pluginPaths: [
@@ -31,7 +31,7 @@ describe('favourites tymly-users-plugin tests', function () {
           require.resolve('@wmfs/tymly-solr-plugin')
         ]
       },
-      function (err, tymlyServices) {
+      (err, tymlyServices) => {
         expect(err).to.eql(null)
         statebox = tymlyServices.statebox
         tymlyService = tymlyServices.tymly
@@ -45,7 +45,7 @@ describe('favourites tymly-users-plugin tests', function () {
     return sqlScriptRunner('./db-scripts/favourites/setup.sql', client)
   })
 
-  it('should get test-user\'s favourites', function (done) {
+  it('should get test-user\'s favourites', done => {
     statebox.startExecution(
       {},
       GET_FAVOURITE_STATE_MACHINE,
@@ -53,7 +53,7 @@ describe('favourites tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('GetFavouriteStartableNames')
         expect(executionDescription.currentResource).to.eql('module:getFavouriteStartableNames')
@@ -66,7 +66,7 @@ describe('favourites tymly-users-plugin tests', function () {
     )
   })
 
-  it('should update test-user\'s favourites', function (done) {
+  it('should update test-user\'s favourites', done => {
     statebox.startExecution(
       {
         stateMachineNames: '["wmfs_claimAnExpense_1_0", "wmfs_reportHydrantDefect_1_0", "notifications"]'
@@ -76,7 +76,7 @@ describe('favourites tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('SetFavouriteStartableNames')
         expect(executionDescription.currentResource).to.eql('module:setFavouriteStartableNames')
@@ -86,7 +86,7 @@ describe('favourites tymly-users-plugin tests', function () {
       }
     )
   })
-  it('should ensure test-user\'s applied favourites are present in DB', function (done) {
+  it('should ensure test-user\'s applied favourites are present in DB', done => {
     statebox.startExecution(
       {},
       GET_FAVOURITE_STATE_MACHINE,
@@ -94,7 +94,7 @@ describe('favourites tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('GetFavouriteStartableNames')
         expect(executionDescription.currentResource).to.eql('module:getFavouriteStartableNames')

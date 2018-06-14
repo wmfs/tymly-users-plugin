@@ -21,7 +21,7 @@ describe('get-board-data tymly-users-plugin tests', function () {
     }
   })
 
-  it('should create some basic tymly services', function (done) {
+  it('should create some basic tymly services', done => {
     tymly.boot(
       {
         blueprintPaths: [
@@ -33,7 +33,7 @@ describe('get-board-data tymly-users-plugin tests', function () {
           require.resolve('@wmfs/tymly-solr-plugin')
         ]
       },
-      function (err, tymlyServices) {
+      (err, tymlyServices) => {
         expect(err).to.eql(null)
         tymlyService = tymlyServices.tymly
         statebox = tymlyServices.statebox
@@ -82,7 +82,7 @@ describe('get-board-data tymly-users-plugin tests', function () {
       .catch(err => done(err))
   })
 
-  it('run state machine to get board data from one table', function (done) {
+  it('run state machine to get board data from one table', done => {
     statebox.startExecution(
       {
         boardKeys: {
@@ -104,7 +104,7 @@ describe('get-board-data tymly-users-plugin tests', function () {
     )
   })
 
-  it('run state machine to get board data from two tables', function (done) {
+  it('run state machine to get board data from two tables', done => {
     statebox.startExecution(
       {
         boardKeys: {
@@ -126,7 +126,7 @@ describe('get-board-data tymly-users-plugin tests', function () {
     )
   })
 
-  it('run state machine with no input - single', function (done) {
+  it('run state machine with no input - single', done => {
     statebox.startExecution(
       {},
       GET_SINGLE_BOARD_STATE_MACHINE,
@@ -142,7 +142,7 @@ describe('get-board-data tymly-users-plugin tests', function () {
     )
   })
 
-  it('run state machine with no input - multiple', function (done) {
+  it('run state machine with no input - multiple', done => {
     statebox.startExecution(
       {},
       GET_MULTIPLE_BOARDS_STATE_MACHINE,

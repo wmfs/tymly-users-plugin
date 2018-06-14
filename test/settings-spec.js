@@ -14,7 +14,7 @@ const APPLY_SETTINGS_STATE_MACHINE = 'tymly_applySettings_1_0'
 describe('settings tymly-users-plugin tests', function () {
   this.timeout(process.env.TIMEOUT || 5000)
   let statebox, tymlyService, client
-  const fakeCategories = { }
+  const fakeCategories = {}
 
   before(function () {
     if (process.env.PG_CONNECTION_STRING && !/^postgres:\/\/[^:]+:[^@]+@(?:localhost|127\.0\.0\.1).*$/.test(process.env.PG_CONNECTION_STRING)) {
@@ -23,7 +23,7 @@ describe('settings tymly-users-plugin tests', function () {
     }
   })
 
-  it('should create some basic tymly services', function (done) {
+  it('should create some basic tymly services', done => {
     tymly.boot(
       {
         pluginPaths: [
@@ -32,7 +32,7 @@ describe('settings tymly-users-plugin tests', function () {
           require.resolve('@wmfs/tymly-solr-plugin')
         ]
       },
-      function (err, tymlyServices) {
+      (err, tymlyServices) => {
         expect(err).to.eql(null)
         statebox = tymlyServices.statebox
         tymlyServices.categories.categories_ = fakeCategories
@@ -47,7 +47,7 @@ describe('settings tymly-users-plugin tests', function () {
     return sqlScriptRunner('./db-scripts/settings/setup.sql', client)
   })
 
-  it('should get test-user\'s settings', function (done) {
+  it('should get test-user\'s settings', done => {
     statebox.startExecution(
       {},
       GET_SETTINGS_STATE_MACHINE,
@@ -55,7 +55,7 @@ describe('settings tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
           expect(executionDescription.currentStateName).to.eql('GetSettings')
@@ -77,7 +77,7 @@ describe('settings tymly-users-plugin tests', function () {
     )
   })
 
-  it('should update test-user\'s settings', function (done) {
+  it('should update test-user\'s settings', done => {
     statebox.startExecution(
       {
         categoryRelevance: '["incidents", "hr", "hydrants", "gazetteer", "expenses"]'
@@ -87,7 +87,7 @@ describe('settings tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
           expect(executionDescription.currentStateName).to.eql('ApplySettings')
@@ -102,7 +102,7 @@ describe('settings tymly-users-plugin tests', function () {
     )
   })
 
-  it('should ensure test-user\'s applied settings are present in DB', function (done) {
+  it('should ensure test-user\'s applied settings are present in DB', done => {
     statebox.startExecution(
       {},
       GET_SETTINGS_STATE_MACHINE,
@@ -110,7 +110,7 @@ describe('settings tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
           expect(executionDescription.currentStateName).to.eql('GetSettings')
@@ -132,7 +132,7 @@ describe('settings tymly-users-plugin tests', function () {
     )
   })
 
-  it('get default values for new-user\'s settings', function (done) {
+  it('get default values for new-user\'s settings', done => {
     statebox.startExecution(
       {},
       GET_SETTINGS_STATE_MACHINE,
@@ -140,7 +140,7 @@ describe('settings tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'new-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
           expect(executionDescription.currentStateName).to.eql('GetSettings')
@@ -157,14 +157,14 @@ describe('settings tymly-users-plugin tests', function () {
     )
   })
 
-  it('should attempt to apply settings without passing anything in', function (done) {
+  it('should attempt to apply settings without passing anything in', done => {
     statebox.startExecution(
       {},
       APPLY_SETTINGS_STATE_MACHINE,
       {
         sendResponse: 'COMPLETE'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.status).to.eql('FAILED')
         done()

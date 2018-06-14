@@ -21,7 +21,7 @@ describe('awaitingUserInput state tests', function () {
     }
   })
 
-  it('should create some basic tymly services', function (done) {
+  it('should create some basic tymly services', done => {
     tymly.boot(
       {
         blueprintPaths: [
@@ -33,7 +33,7 @@ describe('awaitingUserInput state tests', function () {
           require.resolve('@wmfs/tymly-solr-plugin')
         ]
       },
-      function (err, tymlyServices) {
+      (err, tymlyServices) => {
         expect(err).to.eql(null)
         statebox = tymlyServices.statebox
         client = tymlyServices.storage.client
@@ -43,14 +43,14 @@ describe('awaitingUserInput state tests', function () {
     )
   })
 
-  it('should execute awaitingHumanInput state machine and expect defaults to come through', function (done) {
+  it('should execute awaitingHumanInput state machine and expect defaults to come through', done => {
     statebox.startExecution(
       {},
       HEARTBEAT_STATE_MACHINE,
       {
         sendResponse: 'AFTER_RESOURCE_CALLBACK.TYPE:awaitingHumanInput'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('TestHeartbeat')
         expect(executionDescription.currentResource).to.eql('module:awaitingHumanInput')
@@ -63,7 +63,7 @@ describe('awaitingUserInput state tests', function () {
     )
   })
 
-  it('should overwrite any default values if config passed in', function (done) {
+  it('should overwrite any default values if config passed in', done => {
     statebox.startExecution(
       {
         someDefaultFormData: {
@@ -75,7 +75,7 @@ describe('awaitingUserInput state tests', function () {
       {
         sendResponse: 'AFTER_RESOURCE_CALLBACK.TYPE:awaitingHumanInput'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('TestHeartbeat')
         expect(executionDescription.currentResource).to.eql('module:awaitingHumanInput')
@@ -88,7 +88,7 @@ describe('awaitingUserInput state tests', function () {
     )
   })
 
-  it('should watch a board for this user', function (done) {
+  it('should watch a board for this user', done => {
     statebox.startExecution(
       {
         stateMachineName: 'test_getBoards_1_0',
@@ -112,7 +112,7 @@ describe('awaitingUserInput state tests', function () {
     )
   })
 
-  it('should check the required human input if the user is watching the board', function (done) {
+  it('should check the required human input if the user is watching the board', done => {
     statebox.startExecution(
       {
         boardKeys: {

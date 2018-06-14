@@ -21,7 +21,7 @@ describe('user-remit tymly-users-plugin tests', function () {
     }
   })
 
-  it('should create some basic tymly services', function (done) {
+  it('should create some basic tymly services', done => {
     tymly.boot(
       {
         blueprintPaths: [
@@ -33,7 +33,7 @@ describe('user-remit tymly-users-plugin tests', function () {
           require.resolve('@wmfs/tymly-solr-plugin')
         ]
       },
-      function (err, tymlyServices) {
+      (err, tymlyServices) => {
         expect(err).to.eql(null)
         statebox = tymlyServices.statebox
         tymlyService = tymlyServices.tymly
@@ -55,7 +55,7 @@ describe('user-remit tymly-users-plugin tests', function () {
     return sqlScriptRunner('./db-scripts/remit/setup.sql', client)
   })
 
-  it('should start the state machine to get user remit, should get whole remit because client doesn\'t contain anything', function (done) {
+  it('should start the state machine to get user remit, should get whole remit because client doesn\'t contain anything', done => {
     statebox.startExecution(
       {
         clientManifest: {
@@ -72,10 +72,10 @@ describe('user-remit tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
-          // console.log(JSON.stringify(executionDescription, null, 2))
+
           expect(executionDescription.currentStateName).to.eql('GetUserRemit')
           expect(executionDescription.currentResource).to.eql('module:getUserRemit')
           expect(executionDescription.stateMachineName).to.eql(GET_USER_REMIT_STATE_MACHINE)
@@ -130,7 +130,7 @@ describe('user-remit tymly-users-plugin tests', function () {
     )
   })
 
-  it('what if the user only has settings and no favourites yet?', function (done) {
+  it('what if the user only has settings and no favourites yet?', done => {
     statebox.startExecution(
       {
         clientManifest: {
@@ -147,10 +147,10 @@ describe('user-remit tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user-3'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
-          // console.log(JSON.stringify(executionDescription, null, 2))
+
           expect(executionDescription.currentStateName).to.eql('GetUserRemit')
           expect(executionDescription.currentResource).to.eql('module:getUserRemit')
           expect(executionDescription.stateMachineName).to.eql(GET_USER_REMIT_STATE_MACHINE)
@@ -172,7 +172,7 @@ describe('user-remit tymly-users-plugin tests', function () {
     )
   })
 
-  it('should add fire, water and remove hr category names to the remit', function (done) {
+  it('should add fire, water and remove hr category names to the remit', done => {
     statebox.startExecution(
       {
         clientManifest: {
@@ -189,10 +189,10 @@ describe('user-remit tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
-          // console.log(JSON.stringify(executionDescription, null, 2))
+
           expect(executionDescription.currentStateName).to.eql('GetUserRemit')
           expect(executionDescription.currentResource).to.eql('module:getUserRemit')
           expect(executionDescription.stateMachineName).to.eql(GET_USER_REMIT_STATE_MACHINE)
@@ -210,7 +210,7 @@ describe('user-remit tymly-users-plugin tests', function () {
     )
   })
 
-  it('should add/remove todo execution names to/from the remit', function (done) {
+  it('should add/remove todo execution names to/from the remit', done => {
     statebox.startExecution(
       {
         clientManifest: {
@@ -227,10 +227,10 @@ describe('user-remit tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
-          // console.log(JSON.stringify(executionDescription, null, 2))
+
           expect(executionDescription.currentStateName).to.eql('GetUserRemit')
           expect(executionDescription.currentResource).to.eql('module:getUserRemit')
           expect(executionDescription.stateMachineName).to.eql(GET_USER_REMIT_STATE_MACHINE)
@@ -247,7 +247,7 @@ describe('user-remit tymly-users-plugin tests', function () {
     )
   })
 
-  it('should add/remove team names to/from the remit', function (done) {
+  it('should add/remove team names to/from the remit', done => {
     statebox.startExecution(
       {
         clientManifest: {
@@ -264,10 +264,10 @@ describe('user-remit tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
-          // console.log(JSON.stringify(executionDescription, null, 2))
+
           expect(executionDescription.currentStateName).to.eql('GetUserRemit')
           expect(executionDescription.currentResource).to.eql('module:getUserRemit')
           expect(executionDescription.stateMachineName).to.eql(GET_USER_REMIT_STATE_MACHINE)
@@ -284,7 +284,7 @@ describe('user-remit tymly-users-plugin tests', function () {
     )
   })
 
-  it('should add/remove form names to/from the remit', function (done) {
+  it('should add/remove form names to/from the remit', done => {
     statebox.startExecution(
       {
         clientManifest: {
@@ -304,10 +304,10 @@ describe('user-remit tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
-          // console.log(JSON.stringify(executionDescription, null, 2))
+
           expect(executionDescription.currentStateName).to.eql('GetUserRemit')
           expect(executionDescription.currentResource).to.eql('module:getUserRemit')
           expect(executionDescription.stateMachineName).to.eql(GET_USER_REMIT_STATE_MACHINE)
@@ -327,7 +327,7 @@ describe('user-remit tymly-users-plugin tests', function () {
     )
   })
 
-  it('should add/remove board names to/from the remit', function (done) {
+  it('should add/remove board names to/from the remit', done => {
     statebox.startExecution(
       {
         clientManifest: {
@@ -347,7 +347,7 @@ describe('user-remit tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
           expect(executionDescription.currentStateName).to.eql('GetUserRemit')
@@ -369,7 +369,7 @@ describe('user-remit tymly-users-plugin tests', function () {
     )
   })
 
-  it('should test shasum remit', function (done) {
+  it('should test shasum remit', done => {
     statebox.startExecution(
       {
         clientManifest: {
@@ -389,7 +389,7 @@ describe('user-remit tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
           expect(executionDescription.currentStateName).to.eql('GetUserRemit')
@@ -412,7 +412,7 @@ describe('user-remit tymly-users-plugin tests', function () {
     return sqlScriptRunner('./db-scripts/todos/setup2.sql', client)
   })
 
-  it('expect empty todo object in remit', function (done) {
+  it('expect empty todo object in remit', done => {
     statebox.startExecution(
       {
         clientManifest: {
@@ -429,10 +429,10 @@ describe('user-remit tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         try {
           expect(err).to.eql(null)
-          // console.log(JSON.stringify(executionDescription, null, 2))
+
           expect(executionDescription.currentStateName).to.eql('GetUserRemit')
           expect(executionDescription.currentResource).to.eql('module:getUserRemit')
           expect(executionDescription.stateMachineName).to.eql(GET_USER_REMIT_STATE_MACHINE)

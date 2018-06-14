@@ -23,7 +23,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
     }
   })
 
-  it('should create some basic tymly services', function (done) {
+  it('should create some basic tymly services', done => {
     tymly.boot(
       {
         pluginPaths: [
@@ -32,7 +32,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
           require.resolve('@wmfs/tymly-solr-plugin')
         ]
       },
-      function (err, tymlyServices) {
+      (err, tymlyServices) => {
         expect(err).to.eql(null)
         statebox = tymlyServices.statebox
         tymlyService = tymlyServices.tymly
@@ -42,7 +42,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
     )
   })
 
-  it('should watch the board', function (done) {
+  it('should watch the board', done => {
     statebox.startExecution(
       {
         stateMachineName: 'wmfs_incidentSummary_1_0',
@@ -60,7 +60,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('DeltaReindex')
         expect(executionDescription.currentResource).to.eql('module:deltaReindex')
@@ -75,7 +75,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
     )
   })
 
-  it('should get the watched board to validate the previous test', function (done) {
+  it('should get the watched board to validate the previous test', done => {
     statebox.startExecution(
       {},
       GET_WATCHED_BOARDS_STATE_MACHINE,
@@ -83,9 +83,9 @@ describe('watched-boards tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
-        console.log(JSON.stringify(executionDescription, null, 2))
+
         expect(executionDescription.currentStateName).to.eql('GetWatchedBoards')
         expect(executionDescription.currentResource).to.eql('module:getWatchedBoards')
         expect(executionDescription.stateMachineName).to.eql(GET_WATCHED_BOARDS_STATE_MACHINE)
@@ -98,7 +98,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
     )
   })
 
-  it('should watch another board in the same category', function (done) {
+  it('should watch another board in the same category', done => {
     statebox.startExecution(
       {
         stateMachineName: 'wmfs_incidentSummary_1_0',
@@ -116,7 +116,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('DeltaReindex')
         expect(executionDescription.currentResource).to.eql('module:deltaReindex')
@@ -131,7 +131,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
     )
   })
 
-  it('should watch another board in another category', function (done) {
+  it('should watch another board in another category', done => {
     statebox.startExecution(
       {
         stateMachineName: 'wmfs_propertyViewer_1_0',
@@ -148,7 +148,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
         expect(executionDescription.currentStateName).to.eql('DeltaReindex')
         expect(executionDescription.currentResource).to.eql('module:deltaReindex')
@@ -163,7 +163,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
     )
   })
 
-  it('should get multiple watched boards', function (done) {
+  it('should get multiple watched boards', done => {
     statebox.startExecution(
       {},
       GET_WATCHED_BOARDS_STATE_MACHINE,
@@ -171,9 +171,9 @@ describe('watched-boards tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
-        console.log(JSON.stringify(executionDescription, null, 2))
+
         expect(executionDescription.currentStateName).to.eql('GetWatchedBoards')
         expect(executionDescription.currentResource).to.eql('module:getWatchedBoards')
         expect(executionDescription.stateMachineName).to.eql(GET_WATCHED_BOARDS_STATE_MACHINE)
@@ -185,7 +185,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
     )
   })
 
-  it('should delete the watched board to validate the previous test', function (done) {
+  it('should delete the watched board to validate the previous test', done => {
     statebox.startExecution(
       {
         subscriptionId: subscriptionId
@@ -195,9 +195,9 @@ describe('watched-boards tymly-users-plugin tests', function () {
         sendResponse: 'COMPLETE',
         userId: 'test-user'
       },
-      function (err, executionDescription) {
+      (err, executionDescription) => {
         expect(err).to.eql(null)
-        // console.log(JSON.stringify(executionDescription, null, 2))
+
         expect(executionDescription.currentStateName).to.eql('UnwatchBoard')
         expect(executionDescription.currentResource).to.eql('module:unwatchBoard')
         expect(executionDescription.stateMachineName).to.eql(UNWATCH_BOARD_STATE_MACHINE)
@@ -207,7 +207,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
     )
   })
 
-  it('should check the board has been unwatched', function (done) {
+  it('should check the board has been unwatched', done => {
     client.query(`SELECT * FROM tymly.watched_boards where id = '${subscriptionId}'`, function (err, results) {
       expect(results.rowCount).to.eql(0)
       done(err)
