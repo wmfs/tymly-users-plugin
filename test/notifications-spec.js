@@ -221,6 +221,37 @@ describe('notifications tymly-users-plugin tests', function () {
     )
   })
 
+  it('should attempt to acknowledge notifications that do not exist', function (done) {
+    statebox.startExecution(
+      {
+        notificationsToMark: [1,2,3,4]
+      },
+      ACKNOWLEDGE_NOTIFICATIONS_STATE_MACHINE,
+      {
+        sendResponse: 'COMPLETE',
+        userId: 'test-user'
+      },
+      function (err, executionDescription) {
+        expect(err).to.eql(null)
+        expect(executionDescription.status).to.eql('FAILED')
+        done()
+      }
+    )
+  })
+
+  it('should attempt to create a notification without passing anything in', function (done) {
+    statebox.startExecution(
+      {},
+      CREATE_NOTIFICATIONS_STATE_MACHINE,
+      {sendResponse: 'COMPLETE'},
+      function (err, executionDescription) {
+        expect(err).to.eql(null)
+        expect(executionDescription.status).to.eql('FAILED')
+        done()
+      }
+    )
+  })
+
   it('should clean up the test resources', function () {
     return sqlScriptRunner('./db-scripts/cleanup.sql', client)
   })

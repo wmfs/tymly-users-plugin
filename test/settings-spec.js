@@ -157,6 +157,21 @@ describe('settings tymly-users-plugin tests', function () {
     )
   })
 
+  it('should attempt to apply settings without passing anything in', function (done) {
+    statebox.startExecution(
+      {},
+      APPLY_SETTINGS_STATE_MACHINE,
+      {
+        sendResponse: 'COMPLETE'
+      },
+      function (err, executionDescription) {
+        expect(err).to.eql(null)
+        expect(executionDescription.status).to.eql('FAILED')
+        done()
+      }
+    )
+  })
+
   it('should tear down the test resources', function () {
     return sqlScriptRunner('./db-scripts/cleanup.sql', client)
   })

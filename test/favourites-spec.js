@@ -65,6 +65,7 @@ describe('favourites tymly-users-plugin tests', function () {
       }
     )
   })
+
   it('should update test-user\'s favourites', function (done) {
     statebox.startExecution(
       {

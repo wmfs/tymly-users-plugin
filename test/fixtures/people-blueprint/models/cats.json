@@ -1,0 +1,19 @@
+{
+  "title": "cats",
+  "description": "A bunch of cats",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "description": "First name"
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last name"
+    },
+    "age": {
+      "type": "integer",
+      "description": "Age"
+    }
+  }
+}

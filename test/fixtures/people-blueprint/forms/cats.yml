@@ -1,0 +1,29 @@
+form:
+  name: cats
+  title: Cats
+  colorScheme: lightblue
+  header:
+    image: /default.jpg
+    description: A bunch of cats.
+  categories:
+    - cats
+  instigators:
+    - user
+model:
+  jsonSchemaPaths: ./models/cats.json
+sections:
+  general:
+    widgets:
+      - title: firstName*
+        type: string
+        description: First name.
+        condition:
+          expression: "(general_firstName)"
+          dependents:
+          -  general_lastName
+      - title: lastName*
+        type: string
+        description: Last name.
+      - title: age
+        type: number
+        description: Age.
