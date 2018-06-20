@@ -21,7 +21,7 @@
   "main": "./lib/index.js",
   "dependencies": {
     "debug": "3.1.0",
-    "form-maker": "^0.0.7",
+    "@wmfs/form-maker": "1.0.0",
     "jsonfile": "4.0.0",
     "jsonpath": "1.0.0",
     "lodash": "4.17.10",
