@@ -10,6 +10,11 @@ const sqlScriptRunner = require('./fixtures/sql-script-runner.js')
 
 const HEARTBEAT_STATE_MACHINE = 'test_testHeartbeat_1_0'
 
+process.on('unhandledRejection', (reason, p) => {
+  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason)
+  // application specific logging, throwing an error, or other logic here
+})
+
 describe('awaitingUserInput state tests', function () {
   this.timeout(process.env.TIMEOUT || 5000)
   let statebox, client, tymlyService
