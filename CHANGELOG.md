@@ -1,3 +1,33 @@
+# [1.2.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.1.11...v1.2.0) (2018-09-05)
+
+
+### 🛠 Builds
+
+* **deps:** update [@wmfs](https://github.com/wmfs)/form-maker requirement from 1.0.1 to 1.0.2 ([faab516](https://github.com/wmfs/tymly-users-plugin/commit/faab516))
+* **deps-dev:** update [@semantic-release](https://github.com/semantic-release)/git requirement from 7.0.1 to 7.0.2 ([a846236](https://github.com/wmfs/tymly-users-plugin/commit/a846236))
+* **deps-dev:** update [@semantic-release](https://github.com/semantic-release)/git requirement from 7.0.2 to 7.0.3 ([78900b9](https://github.com/wmfs/tymly-users-plugin/commit/78900b9))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.17.0 to 1.21.0 ([0c70e37](https://github.com/wmfs/tymly-users-plugin/commit/0c70e37))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement from 1.30.0 to 1.31.0 ([f6b65cb](https://github.com/wmfs/tymly-users-plugin/commit/f6b65cb))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement from 1.31.0 to 1.32.0 ([492c918](https://github.com/wmfs/tymly-users-plugin/commit/492c918))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement from 1.32.0 to 1.33.0 ([2e6ea39](https://github.com/wmfs/tymly-users-plugin/commit/2e6ea39))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement from 1.33.0 to 1.34.0 ([bf243d1](https://github.com/wmfs/tymly-users-plugin/commit/bf243d1))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement from 1.34.0 to 1.35.0 ([0a5708f](https://github.com/wmfs/tymly-users-plugin/commit/0a5708f))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement from 1.35.0 to 1.36.0 ([a782057](https://github.com/wmfs/tymly-users-plugin/commit/a782057))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement from 1.36.0 to 1.37.0 ([b3c3bbd](https://github.com/wmfs/tymly-users-plugin/commit/b3c3bbd))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement from 1.37.0 to 1.38.0 ([9a635d5](https://github.com/wmfs/tymly-users-plugin/commit/9a635d5))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement from 1.38.0 to 1.39.0 ([b73cc51](https://github.com/wmfs/tymly-users-plugin/commit/b73cc51))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-solr-plugin requirement from 1.1.0 to 1.1.1 ([b1b744d](https://github.com/wmfs/tymly-users-plugin/commit/b1b744d))
+* **deps-dev:** update codecov requirement from 3.0.4 to 3.1.0 ([c3f70b7](https://github.com/wmfs/tymly-users-plugin/commit/c3f70b7))
+* **deps-dev:** update nyc requirement from 12.0.2 to 13.0.1 ([a8833d0](https://github.com/wmfs/tymly-users-plugin/commit/a8833d0))
+* **deps-dev:** update semantic-release requirement from 15.9.11 to 15.9.12 ([142db77](https://github.com/wmfs/tymly-users-plugin/commit/142db77))
+* **deps-dev:** update semantic-release requirement from 15.9.9 to 15.9.11 ([e9d8765](https://github.com/wmfs/tymly-users-plugin/commit/e9d8765))
+* **deps-dev:** update standard requirement from 11.0.1 to 12.0.1 ([ab7c153](https://github.com/wmfs/tymly-users-plugin/commit/ab7c153))
+
+
+### 💎 Styles
+
+* Style fixes for standard 12.0.1 ([5c1c6b2](https://github.com/wmfs/tymly-users-plugin/commit/5c1c6b2))
+
 ## [1.1.11](https://github.com/wmfs/tymly-users-plugin/compare/v1.1.10...v1.1.11) (2018-08-23)
 
 
