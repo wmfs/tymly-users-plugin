@@ -199,7 +199,7 @@ describe('notifications tymly-users-plugin tests', function () {
     const executionDescription = await statebox.startExecution(
       {},
       CREATE_NOTIFICATIONS_STATE_MACHINE,
-      {sendResponse: 'COMPLETE'}
+      { sendResponse: 'COMPLETE' }
     )
 
     expect(executionDescription.status).to.eql('FAILED')
