@@ -1,3 +1,19 @@
+# [1.3.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.2.0...v1.3.0) (2018-09-10)
+
+
+### 🛠 Builds
+
+* **deps:** update jsonfile requirement from 4.0.0 to 5.0.0 ([851b71c](https://github.com/wmfs/tymly-users-plugin/commit/851b71c))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.21.0 to 1.22.0 ([dd4d400](https://github.com/wmfs/tymly-users-plugin/commit/dd4d400))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.22.0 to 1.23.0 ([8428bd3](https://github.com/wmfs/tymly-users-plugin/commit/8428bd3))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([1f6ccd3](https://github.com/wmfs/tymly-users-plugin/commit/1f6ccd3))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([fbca4e3](https://github.com/wmfs/tymly-users-plugin/commit/fbca4e3))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([c81d291](https://github.com/wmfs/tymly-users-plugin/commit/c81d291))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([985f7ff](https://github.com/wmfs/tymly-users-plugin/commit/985f7ff))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([5830ad7](https://github.com/wmfs/tymly-users-plugin/commit/5830ad7))
+* **deps-dev:** update semantic-release requirement ([c21cad8](https://github.com/wmfs/tymly-users-plugin/commit/c21cad8))
+* **deps-dev:** update semantic-release requirement ([b0bfc45](https://github.com/wmfs/tymly-users-plugin/commit/b0bfc45))
+
 # [1.2.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.1.11...v1.2.0) (2018-09-05)
 
 
