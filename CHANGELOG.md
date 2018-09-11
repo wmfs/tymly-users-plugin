@@ -1,3 +1,14 @@
+# [1.4.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.3.0...v1.4.0) (2018-09-11)
+
+
+### 🛠 Builds
+
+* **deps:** update debug requirement from 3.1.0 to 3.2.0 ([6ae19c0](https://github.com/wmfs/tymly-users-plugin/commit/6ae19c0))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.23.0 to 1.24.0 ([9aeac1a](https://github.com/wmfs/tymly-users-plugin/commit/9aeac1a))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.24.0 to 1.25.0 ([1ee3366](https://github.com/wmfs/tymly-users-plugin/commit/1ee3366))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.25.0 to 1.26.0 ([660e701](https://github.com/wmfs/tymly-users-plugin/commit/660e701))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.26.0 to 1.26.1 ([223a5d2](https://github.com/wmfs/tymly-users-plugin/commit/223a5d2))
+
 # [1.3.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.2.0...v1.3.0) (2018-09-10)
 
 
