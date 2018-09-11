@@ -1,3 +1,13 @@
+# [1.5.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.4.0...v1.5.0) (2018-09-11)
+
+
+### 🛠 Builds
+
+* **deps:** update debug requirement from 3.2.0 to 3.2.1 ([40a0f76](https://github.com/wmfs/tymly-users-plugin/commit/40a0f76))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/hl-pg-client requirement ([c82570f](https://github.com/wmfs/tymly-users-plugin/commit/c82570f))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([c3dc60a](https://github.com/wmfs/tymly-users-plugin/commit/c3dc60a))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-solr-plugin requirement ([dfaeb25](https://github.com/wmfs/tymly-users-plugin/commit/dfaeb25))
+
 # [1.4.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.3.0...v1.4.0) (2018-09-11)
 
 
