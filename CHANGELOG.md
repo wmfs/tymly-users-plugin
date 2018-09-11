@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.5.0...v1.6.0) (2018-09-11)
+
+
+### 🛠 Builds
+
+* **deps:** update debug requirement from 3.2.1 to 3.2.3 ([c6be436](https://github.com/wmfs/tymly-users-plugin/commit/c6be436))
+
 # [1.5.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.4.0...v1.5.0) (2018-09-11)
 
 
