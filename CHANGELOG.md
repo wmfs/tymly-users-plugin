@@ -1,3 +1,15 @@
+# [1.9.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.8.0...v1.9.0) (2018-09-12)
+
+
+### 🛠 Builds
+
+* **deps:** update [@wmfs](https://github.com/wmfs)/form-maker requirement from 1.0.2 to 1.1.0 ([2693c21](https://github.com/wmfs/tymly-users-plugin/commit/2693c21))
+* **deps:** update lodash requirement from 4.17.10 to 4.17.11 ([6031be3](https://github.com/wmfs/tymly-users-plugin/commit/6031be3))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.26.1 to 1.27.0 ([531d7e6](https://github.com/wmfs/tymly-users-plugin/commit/531d7e6))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.27.0 to 1.29.0 ([73aa306](https://github.com/wmfs/tymly-users-plugin/commit/73aa306))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([3720e66](https://github.com/wmfs/tymly-users-plugin/commit/3720e66))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([72ca8ad](https://github.com/wmfs/tymly-users-plugin/commit/72ca8ad))
+
 # [1.8.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.7.0...v1.8.0) (2018-09-12)
 
 
