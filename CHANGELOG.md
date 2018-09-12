@@ -1,3 +1,21 @@
+# [1.8.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.7.0...v1.8.0) (2018-09-12)
+
+
+### 🛠 Builds
+
+* **deps:** update debug requirement from 4.0.0 to 4.0.1 ([f4aef5d](https://github.com/wmfs/tymly-users-plugin/commit/f4aef5d))
+* **deps-dev:** update [@semantic-release](https://github.com/semantic-release)/git requirement ([bb55896](https://github.com/wmfs/tymly-users-plugin/commit/bb55896))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/hl-pg-client requirement ([565a7a5](https://github.com/wmfs/tymly-users-plugin/commit/565a7a5))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/hl-pg-client requirement ([70f7d41](https://github.com/wmfs/tymly-users-plugin/commit/70f7d41))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([3ba8ec1](https://github.com/wmfs/tymly-users-plugin/commit/3ba8ec1))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([9478ddb](https://github.com/wmfs/tymly-users-plugin/commit/9478ddb))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([dffd41b](https://github.com/wmfs/tymly-users-plugin/commit/dffd41b))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([79f38cc](https://github.com/wmfs/tymly-users-plugin/commit/79f38cc))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([dc2227c](https://github.com/wmfs/tymly-users-plugin/commit/dc2227c))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([9c9300e](https://github.com/wmfs/tymly-users-plugin/commit/9c9300e))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-solr-plugin requirement ([9981b68](https://github.com/wmfs/tymly-users-plugin/commit/9981b68))
+* **deps-dev:** update semantic-release requirement ([4591842](https://github.com/wmfs/tymly-users-plugin/commit/4591842))
+
 # [1.7.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.6.0...v1.7.0) (2018-09-11)
 
 
