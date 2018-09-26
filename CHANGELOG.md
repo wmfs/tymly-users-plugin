@@ -1,3 +1,26 @@
+## [1.9.1](https://github.com/wmfs/tymly-users-plugin/compare/v1.9.0...v1.9.1) (2018-09-26)
+
+
+### 🐛 Bug Fixes
+
+* Use rbac.checkAuthorization instead of checkRoleAuthorization ([804da3c](https://github.com/wmfs/tymly-users-plugin/commit/804da3c))
+
+
+### 🛠 Builds
+
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.29.0 to 1.30.0 ([abe19ce](https://github.com/wmfs/tymly-users-plugin/commit/abe19ce))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.30.0 to 1.31.0 ([f4299f0](https://github.com/wmfs/tymly-users-plugin/commit/f4299f0))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.31.0 to 1.32.0 ([615c68c](https://github.com/wmfs/tymly-users-plugin/commit/615c68c))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.32.0 to 1.33.0 ([b4b7802](https://github.com/wmfs/tymly-users-plugin/commit/b4b7802))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.33.0 to 1.34.0 ([85ba1fc](https://github.com/wmfs/tymly-users-plugin/commit/85ba1fc))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.34.0 to 1.35.0 ([ddd4121](https://github.com/wmfs/tymly-users-plugin/commit/ddd4121))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([ee75e05](https://github.com/wmfs/tymly-users-plugin/commit/ee75e05))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([a0f3d65](https://github.com/wmfs/tymly-users-plugin/commit/a0f3d65))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([9dd4bf3](https://github.com/wmfs/tymly-users-plugin/commit/9dd4bf3))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([c866eb7](https://github.com/wmfs/tymly-users-plugin/commit/c866eb7))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-solr-plugin requirement ([5f94ab2](https://github.com/wmfs/tymly-users-plugin/commit/5f94ab2))
+* **deps-dev:** update semantic-release requirement ([8ae1103](https://github.com/wmfs/tymly-users-plugin/commit/8ae1103))
+
 # [1.9.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.8.0...v1.9.0) (2018-09-12)
 
 
