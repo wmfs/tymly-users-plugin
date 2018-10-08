@@ -1,3 +1,32 @@
+# [1.10.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.9.1...v1.10.0) (2018-10-08)
+
+
+### 🛠 Builds
+
+* **deps:** update debug requirement from 4.0.1 to 4.1.0 ([5aea79b](https://github.com/wmfs/tymly-users-plugin/commit/5aea79b))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/hl-pg-client requirement ([346f6f8](https://github.com/wmfs/tymly-users-plugin/commit/346f6f8))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.35.0 to 1.36.0 ([25b9c08](https://github.com/wmfs/tymly-users-plugin/commit/25b9c08))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.36.0 to 1.37.0 ([45e0912](https://github.com/wmfs/tymly-users-plugin/commit/45e0912))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.37.0 to 1.39.0 ([7221543](https://github.com/wmfs/tymly-users-plugin/commit/7221543))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.39.0 to 1.40.0 ([c533259](https://github.com/wmfs/tymly-users-plugin/commit/c533259))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.40.0 to 1.41.0 ([dc06691](https://github.com/wmfs/tymly-users-plugin/commit/dc06691))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.41.0 to 1.42.0 ([a42d212](https://github.com/wmfs/tymly-users-plugin/commit/a42d212))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([1748995](https://github.com/wmfs/tymly-users-plugin/commit/1748995))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([9ad55ac](https://github.com/wmfs/tymly-users-plugin/commit/9ad55ac))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([5feaf14](https://github.com/wmfs/tymly-users-plugin/commit/5feaf14))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([d254492](https://github.com/wmfs/tymly-users-plugin/commit/d254492))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([f611c4b](https://github.com/wmfs/tymly-users-plugin/commit/f611c4b))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-rbac-plugin requirement ([d180627](https://github.com/wmfs/tymly-users-plugin/commit/d180627))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-rbac-plugin requirement ([c639fe1](https://github.com/wmfs/tymly-users-plugin/commit/c639fe1))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-rbac-plugin requirement ([53ebf72](https://github.com/wmfs/tymly-users-plugin/commit/53ebf72))
+* **deps-dev:** update chai requirement from 4.1.2 to 4.2.0 ([0921487](https://github.com/wmfs/tymly-users-plugin/commit/0921487))
+* **deps-dev:** update semantic-release requirement ([8cd1fd0](https://github.com/wmfs/tymly-users-plugin/commit/8cd1fd0))
+
+
+### 📦 Code Refactoring
+
+* Pull out all the stuff for finding the startable state machines into a separate method ([175ac2a](https://github.com/wmfs/tymly-users-plugin/commit/175ac2a))
+
 ## [1.9.1](https://github.com/wmfs/tymly-users-plugin/compare/v1.9.0...v1.9.1) (2018-09-26)
 
 
