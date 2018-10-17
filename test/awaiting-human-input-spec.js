@@ -35,7 +35,8 @@ describe('awaitingUserInput state tests', function () {
         pluginPaths: [
           path.resolve(__dirname, './../lib'),
           require.resolve('@wmfs/tymly-pg-plugin'),
-          require.resolve('@wmfs/tymly-solr-plugin')
+          require.resolve('@wmfs/tymly-solr-plugin'),
+          require.resolve('@wmfs/tymly-test-helpers/plugins/allow-everything-rbac-plugin')
         ]
       },
       (err, tymlyServices) => {
