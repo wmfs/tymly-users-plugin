@@ -1,3 +1,42 @@
+## [1.10.1](https://github.com/wmfs/tymly-users-plugin/compare/v1.10.0...v1.10.1) (2018-10-21)
+
+
+### 🐛 Bug Fixes
+
+* Use 'new Date().toISOString()' to get current time ([8641a17](https://github.com/wmfs/tymly-users-plugin/commit/8641a17))
+
+
+### 🛠 Builds
+
+* **deps-dev:** update [@semantic-release](https://github.com/semantic-release)/changelog requirement ([5e52edd](https://github.com/wmfs/tymly-users-plugin/commit/5e52edd))
+* **deps-dev:** update [@semantic-release](https://github.com/semantic-release)/git requirement ([b933104](https://github.com/wmfs/tymly-users-plugin/commit/b933104))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/hl-pg-client requirement ([351506e](https://github.com/wmfs/tymly-users-plugin/commit/351506e))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.42.0 to 1.44.0 ([f440d89](https://github.com/wmfs/tymly-users-plugin/commit/f440d89))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.44.0 to 1.45.0 ([e4b7c55](https://github.com/wmfs/tymly-users-plugin/commit/e4b7c55))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.45.0 to 1.46.0 ([c686a3b](https://github.com/wmfs/tymly-users-plugin/commit/c686a3b))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.46.0 to 1.47.0 ([57f5115](https://github.com/wmfs/tymly-users-plugin/commit/57f5115))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.47.0 to 1.49.0 ([e42e1ce](https://github.com/wmfs/tymly-users-plugin/commit/e42e1ce))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.49.0 to 1.50.0 ([20d337e](https://github.com/wmfs/tymly-users-plugin/commit/20d337e))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.50.0 to 1.51.0 ([902d22a](https://github.com/wmfs/tymly-users-plugin/commit/902d22a))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.51.0 to 1.52.0 ([f815440](https://github.com/wmfs/tymly-users-plugin/commit/f815440))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.52.0 to 1.52.1 ([14ea2c3](https://github.com/wmfs/tymly-users-plugin/commit/14ea2c3))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.52.1 to 1.54.0 ([cafe618](https://github.com/wmfs/tymly-users-plugin/commit/cafe618))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([2d03d80](https://github.com/wmfs/tymly-users-plugin/commit/2d03d80))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([59dfbca](https://github.com/wmfs/tymly-users-plugin/commit/59dfbca))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([4711062](https://github.com/wmfs/tymly-users-plugin/commit/4711062))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([85d48b6](https://github.com/wmfs/tymly-users-plugin/commit/85d48b6))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([6e17d0b](https://github.com/wmfs/tymly-users-plugin/commit/6e17d0b))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-solr-plugin requirement ([6b5712b](https://github.com/wmfs/tymly-users-plugin/commit/6b5712b))
+* **deps-dev:** update nyc requirement from 13.0.1 to 13.1.0 ([b8bc8aa](https://github.com/wmfs/tymly-users-plugin/commit/b8bc8aa))
+* **deps-dev:** update semantic-release requirement ([04c05a9](https://github.com/wmfs/tymly-users-plugin/commit/04c05a9))
+* **deps-dev:** update semantic-release requirement ([6b726c0](https://github.com/wmfs/tymly-users-plugin/commit/6b726c0))
+* **deps-dev:** update semantic-release requirement ([26684f6](https://github.com/wmfs/tymly-users-plugin/commit/26684f6))
+
+
+### 🚨 Tests
+
+* **dev-deps:** Added missing tymly-test-helper dependency ([5b98126](https://github.com/wmfs/tymly-users-plugin/commit/5b98126))
+
 # [1.10.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.9.1...v1.10.0) (2018-10-08)
 
 
