@@ -1,3 +1,25 @@
+# [1.11.0](https://github.com/wmfs/tymly-users-plugin.git/compare/v1.10.1...v1.11.0) (2018-10-29)
+
+
+### ✨ Features
+
+* created card service to pick up card templates within blueprints ([2890abc](https://github.com/wmfs/tymly-users-plugin.git/commit/2890abc))
+
+
+### 🛠 Builds
+
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/hl-pg-client requirement ([8d61ff1](https://github.com/wmfs/tymly-users-plugin.git/commit/8d61ff1))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.54.0 to 1.55.0 ([3e26f6a](https://github.com/wmfs/tymly-users-plugin.git/commit/3e26f6a))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.55.0 to 1.56.0 ([613cdcd](https://github.com/wmfs/tymly-users-plugin.git/commit/613cdcd))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([c0f178a](https://github.com/wmfs/tymly-users-plugin.git/commit/c0f178a))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([c5a2ebb](https://github.com/wmfs/tymly-users-plugin.git/commit/c5a2ebb))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([bf36eb4](https://github.com/wmfs/tymly-users-plugin.git/commit/bf36eb4))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([853ae84](https://github.com/wmfs/tymly-users-plugin.git/commit/853ae84))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([7e8c9ef](https://github.com/wmfs/tymly-users-plugin.git/commit/7e8c9ef))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-rbac-plugin requirement ([1ef21ba](https://github.com/wmfs/tymly-users-plugin.git/commit/1ef21ba))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-rbac-plugin requirement ([88f29db](https://github.com/wmfs/tymly-users-plugin.git/commit/88f29db))
+* **deps-dev:** update semantic-release requirement ([255611f](https://github.com/wmfs/tymly-users-plugin.git/commit/255611f))
+
 ## [1.10.1](https://github.com/wmfs/tymly-users-plugin/compare/v1.10.0...v1.10.1) (2018-10-21)
 
 
