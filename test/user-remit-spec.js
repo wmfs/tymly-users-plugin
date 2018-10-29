@@ -61,6 +61,7 @@ describe('user-remit tymly-users-plugin tests', function () {
       {
         clientManifest: {
           boardNames: {},
+          cardNames: {},
           categoryNames: [],
           teams: [],
           todos: [],
@@ -104,6 +105,9 @@ describe('user-remit tymly-users-plugin tests', function () {
     expect(Object.keys(executionDescription.ctx.userRemit.add.teams).includes('Fire Safety (North)')).to.eql(true)
     expect(Object.keys(executionDescription.ctx.userRemit.add.teams).includes('Birmingham (Red watch)')).to.eql(true)
 
+    expect(Object.keys(executionDescription.ctx.userRemit.add.cards).length).to.eql(1)
+    expect(Object.keys(executionDescription.ctx.userRemit.add.cards)).to.eql(['test_simple'])
+
     expect(Object.keys(executionDescription.ctx.userRemit.add.forms).length).to.eql(3)
     expect(Object.keys(executionDescription.ctx.userRemit.add.forms).includes('test_addIncidentLogEntry')).to.eql(true)
     expect(Object.keys(executionDescription.ctx.userRemit.add.forms).includes('test_addIncidentSafetyRecord')).to.eql(true)
@@ -128,6 +132,7 @@ describe('user-remit tymly-users-plugin tests', function () {
       {
         clientManifest: {
           boardNames: {},
+          cardNames: {},
           categoryNames: [],
           teams: [],
           todos: [],
@@ -162,6 +167,7 @@ describe('user-remit tymly-users-plugin tests', function () {
       {
         clientManifest: {
           boardNames: {},
+          cardNames: {},
           categoryNames: ['gazetteer', 'hr'],
           teams: [],
           todos: [],
@@ -192,6 +198,7 @@ describe('user-remit tymly-users-plugin tests', function () {
       {
         clientManifest: {
           boardNames: {},
+          cardNames: {},
           categoryNames: [],
           teams: [],
           todos: ['a69c0ac9-cde5-11e7-abc4-cec278b6b50a', 'a69c0ad0-cde5-11e7-abc4-cec278b6b50a'],
@@ -221,6 +228,7 @@ describe('user-remit tymly-users-plugin tests', function () {
       {
         clientManifest: {
           boardNames: {},
+          cardNames: {},
           categoryNames: [],
           teams: ['Birmingham (Red watch)', 'Another team'],
           todos: [],
@@ -250,6 +258,7 @@ describe('user-remit tymly-users-plugin tests', function () {
       {
         clientManifest: {
           boardNames: {},
+          cardNames: {},
           categoryNames: [],
           teams: [],
           todos: [],
@@ -288,6 +297,7 @@ describe('user-remit tymly-users-plugin tests', function () {
             'test_personalDetails': 'WRONGSHASUM',
             'test_expenses': ''
           },
+          cardNames: {},
           categoryNames: [],
           teams: [],
           todos: [],
@@ -323,6 +333,7 @@ describe('user-remit tymly-users-plugin tests', function () {
             'test_expenses': '',
             'test_personalDetails': '7f9187a7193896052bd2a97b42c4bc7a4f4f0b60'
           },
+          cardNames: {},
           categoryNames: [],
           teams: [],
           todos: [],
@@ -356,6 +367,7 @@ describe('user-remit tymly-users-plugin tests', function () {
       {
         clientManifest: {
           boardNames: {},
+          cardNames: {},
           categoryNames: [],
           teams: [],
           todos: [],
