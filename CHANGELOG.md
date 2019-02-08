@@ -1,3 +1,60 @@
+## [1.12.1](https://github.com/wmfs/tymly-users-plugin/compare/v1.12.0...v1.12.1) (2019-02-08)
+
+
+### 🐛 Bug Fixes
+
+* standard ([f39e0ad](https://github.com/wmfs/tymly-users-plugin/commit/f39e0ad))
+
+
+### 🛠 Builds
+
+* **deps-dev:** update [@semantic-release](https://github.com/semantic-release)/git requirement ([a078681](https://github.com/wmfs/tymly-users-plugin/commit/a078681))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.60.0 to 1.61.0 ([5776d55](https://github.com/wmfs/tymly-users-plugin/commit/5776d55))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.61.0 to 1.62.0 ([bd987a8](https://github.com/wmfs/tymly-users-plugin/commit/bd987a8))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.62.0 to 1.63.0 ([56358b2](https://github.com/wmfs/tymly-users-plugin/commit/56358b2))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.63.0 to 1.64.0 ([e0525e4](https://github.com/wmfs/tymly-users-plugin/commit/e0525e4))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.64.0 to 1.65.0 ([66bd8fa](https://github.com/wmfs/tymly-users-plugin/commit/66bd8fa))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.65.0 to 1.65.1 ([a6fcd0b](https://github.com/wmfs/tymly-users-plugin/commit/a6fcd0b))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.65.1 to 1.66.0 ([ef7bb3c](https://github.com/wmfs/tymly-users-plugin/commit/ef7bb3c))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([d0dbf8e](https://github.com/wmfs/tymly-users-plugin/commit/d0dbf8e))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([250921d](https://github.com/wmfs/tymly-users-plugin/commit/250921d))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([7ade4e9](https://github.com/wmfs/tymly-users-plugin/commit/7ade4e9))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([66e345a](https://github.com/wmfs/tymly-users-plugin/commit/66e345a))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([7ce2974](https://github.com/wmfs/tymly-users-plugin/commit/7ce2974))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-rbac-plugin requirement ([d960db8](https://github.com/wmfs/tymly-users-plugin/commit/d960db8))
+* **deps-dev:** update semantic-release requirement ([723e8cd](https://github.com/wmfs/tymly-users-plugin/commit/723e8cd))
+* **deps-dev:** update semantic-release requirement ([b683285](https://github.com/wmfs/tymly-users-plugin/commit/b683285))
+* **deps-dev:** update semantic-release requirement ([#307](https://github.com/wmfs/tymly-users-plugin/issues/307)) ([978034b](https://github.com/wmfs/tymly-users-plugin/commit/978034b))
+
+
+### 📚 Documentation
+
+* JSDocs for acknowledge-notifications/index ([978ca10](https://github.com/wmfs/tymly-users-plugin/commit/978ca10))
+* JSDocs for acknowledge-notifications/index add return ([d3028fb](https://github.com/wmfs/tymly-users-plugin/commit/d3028fb))
+* JSDocs for acknowledge-notifications/index add return ([8514065](https://github.com/wmfs/tymly-users-plugin/commit/8514065))
+* JSDocs for apply-settings/index ([b575d8b](https://github.com/wmfs/tymly-users-plugin/commit/b575d8b))
+* JSDocs for awaiting-human-input/index ([d3a731c](https://github.com/wmfs/tymly-users-plugin/commit/d3a731c))
+* JSDocs for boards/index ([d777961](https://github.com/wmfs/tymly-users-plugin/commit/d777961))
+* JSDocs for cards/index ([b199b37](https://github.com/wmfs/tymly-users-plugin/commit/b199b37))
+* JSDocs for create-notification/index ([d47ce13](https://github.com/wmfs/tymly-users-plugin/commit/d47ce13))
+* JSDocs for create-todo-entry/index ([b29d561](https://github.com/wmfs/tymly-users-plugin/commit/b29d561))
+* JSDocs for forms/index ([01c558f](https://github.com/wmfs/tymly-users-plugin/commit/01c558f))
+* JSDocs for get-board-data/index ([75d357a](https://github.com/wmfs/tymly-users-plugin/commit/75d357a))
+* JSDocs for get-favourite-startable-names/index ([3d47738](https://github.com/wmfs/tymly-users-plugin/commit/3d47738))
+* JSDocs for get-notifications/index ([c95866e](https://github.com/wmfs/tymly-users-plugin/commit/c95866e))
+* JSDocs for get-settings/index ([37fbeac](https://github.com/wmfs/tymly-users-plugin/commit/37fbeac))
+
+
+### ⚙️ Continuous Integrations
+
+* **circle:** add circle ci config ([51f8756](https://github.com/wmfs/tymly-users-plugin/commit/51f8756))
+* **travis:** update travis config ([9d516ce](https://github.com/wmfs/tymly-users-plugin/commit/9d516ce))
+
+
+### 💎 Styles
+
+* Lint fixes ([13abb13](https://github.com/wmfs/tymly-users-plugin/commit/13abb13))
+
 # [1.12.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.11.0...v1.12.0) (2018-11-15)
 
 
