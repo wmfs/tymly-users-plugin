@@ -1,3 +1,11 @@
+# [1.13.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.12.1...v1.13.0) (2019-02-08)
+
+
+### 🛠 Builds
+
+* **deps:** bump debug from 4.1.0 to 4.1.1 ([b0287e4](https://github.com/wmfs/tymly-users-plugin/commit/b0287e4))
+* **dev-deps:** Update semantic-release and friends ([8e9af9a](https://github.com/wmfs/tymly-users-plugin/commit/8e9af9a))
+
 ## [1.12.1](https://github.com/wmfs/tymly-users-plugin/compare/v1.12.0...v1.12.1) (2019-02-08)
 
 
