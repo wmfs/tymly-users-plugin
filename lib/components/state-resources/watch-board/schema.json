@@ -11,11 +11,11 @@
     },
     "description": {
       "type": "string",
-      "description": "	Some summary content - most likely available on the rendered board or search result etc. Could even be user-editable to help better recognise the reason the board was watched in the first place."
+      "description": "Some summary content - most likely available on the rendered board or search result etc. Could even be user-editable to help better recognise the reason the board was watched in the first place."
     },
     "key": {
       "type": "object",
-      "description": "	A key/value pair object describing the primary key of the currently displayed board - perhaps derived from the launches object which caused the board to be rendered."
+      "description": "A key/value pair object describing the primary key of the currently displayed board - perhaps derived from the launches object which caused the board to be rendered."
     }
   }
 }
