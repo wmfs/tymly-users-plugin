@@ -1,0 +1,11 @@
+{
+  "name": "users",
+  "version": "1.14.0",
+  "label": "Users",
+  "author": "Meena Hoda",
+  "organisation": "West Midlands Fire Service",
+  "description": "Tymly plugin to handle interactions with a user",
+  "categories": [
+    "users"
+  ]
+}
