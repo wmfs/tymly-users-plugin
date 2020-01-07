@@ -31,7 +31,7 @@
     "@semantic-release/changelog": "3.0.6",
     "@semantic-release/git": "7.0.18",
     "@semantic-release/exec": "3.3.8",
-    "@wmfs/hl-pg-client": "1.13.0",
+    "@wmfs/hl-pg-client": "1.14.0",
     "@wmfs/tymly": "1.103.3",
     "@wmfs/tymly-pg-plugin": "1.137.0",
     "@wmfs/tymly-rbac-plugin": "1.16.0",
