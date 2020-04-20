@@ -1,3 +1,50 @@
+## [1.14.1](https://github.com/wmfs/tymly-users-plugin/compare/v1.14.0...v1.14.1) (2020-04-20)
+
+
+### 🐛 Bug Fixes
+
+* **state-resource:** Remove callback parameter from init method. ([a834bd5](https://github.com/wmfs/tymly-users-plugin/commit/a834bd5d226e221ec5747b844cd8440e3bbb9795))
+
+
+### 🛠 Builds
+
+* **deps-dev:** add [@semantic-release](https://github.com/semantic-release)/exec ([5bb1498](https://github.com/wmfs/tymly-users-plugin/commit/5bb1498de2f9ad4d62bbe4dad741a3ec8b6175e9))
+* **deps-dev:** bump codecov from 3.6.1 to 3.6.5 ([b820ad0](https://github.com/wmfs/tymly-users-plugin/commit/b820ad06d0bd9983956aae33a579d309a99b784e))
+* **deps-dev:** bump packages ([59fd69a](https://github.com/wmfs/tymly-users-plugin/commit/59fd69a5a202282d0299cf30b5ecfe753b6b5d7c))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/hl-pg-client requirement ([1df10a7](https://github.com/wmfs/tymly-users-plugin/commit/1df10a72e3c699fc1637b01423852c25498b8448))
+* **deps-dev:** update codecov requirement from 3.1.0 to 3.5.0 ([09f4956](https://github.com/wmfs/tymly-users-plugin/commit/09f495691ee2fb4c0ffb2baa8c01f4c651bdc312))
+* **deps-dev:** update dev dependancies ([aef78a0](https://github.com/wmfs/tymly-users-plugin/commit/aef78a025097ca629e852ed1da469461548d6ae0))
+* **deps-dev:** update mocha requirement from 5.2.0 to 6.1.4 ([620d3c8](https://github.com/wmfs/tymly-users-plugin/commit/620d3c8d81e06d4fdc50fdd01b42ee252ed7324a))
+* **deps-dev:** update nyc requirement from 13.2.0 to 14.1.1 ([2ccf292](https://github.com/wmfs/tymly-users-plugin/commit/2ccf29267eb582aed1b9d247727a03142e22ec6d))
+* **deps-dev:** update semantic-release dev dependencies ([0a49090](https://github.com/wmfs/tymly-users-plugin/commit/0a490907c58f06d1631b58228a1b473fe6470d84))
+* **deps-dev:** update semantic-release requirement ([c5d1053](https://github.com/wmfs/tymly-users-plugin/commit/c5d10535473aa63ed8512a8251896fe56a2dcbc1))
+
+
+### 📚 Documentation
+
+* add circleci status [skip ci] ([6722597](https://github.com/wmfs/tymly-users-plugin/commit/67225971bd3b7b3ac5f5393c51f46354c41a3e30))
+
+
+### 🚨 Tests
+
+* Correct tests for changes in other plugins ([217222e](https://github.com/wmfs/tymly-users-plugin/commit/217222e29bbcbcb9b48880b52b3b8494a4281c64))
+
+
+### ⚙️ Continuous Integrations
+
+* **circle:** add context env var config to config.yml ([c126bec](https://github.com/wmfs/tymly-users-plugin/commit/c126bec7d43701f73fdf82882c4e3106d15c74bd))
+* **circle:** Update CircleCI config - Travis migration ([9697de1](https://github.com/wmfs/tymly-users-plugin/commit/9697de11f1422e0f1b1dc3dd6636d2989a31a699))
+* **circle:** update config ([c38bdc1](https://github.com/wmfs/tymly-users-plugin/commit/c38bdc11779b7008edaaaf4c80cf5945579081d6))
+* **circle:** Update config with postgres ([ba91ee5](https://github.com/wmfs/tymly-users-plugin/commit/ba91ee514bca4650db70d87d6fabe8054fc3540f))
+* **travis:** remove Travis config ([9ef7ef4](https://github.com/wmfs/tymly-users-plugin/commit/9ef7ef40f05f789e4860d6495e0308e9f4d48e9a))
+
+
+### ♻️ Chores
+
+* add plugin.json ([8e1dc16](https://github.com/wmfs/tymly-users-plugin/commit/8e1dc16aae40cfbef5c6d8c87071ff9f2682113a))
+* add version_plugin script ([140fd38](https://github.com/wmfs/tymly-users-plugin/commit/140fd387414618823fb6bfa90c9b6dab89b4fa49))
+* update .releaserc.json ([c929e97](https://github.com/wmfs/tymly-users-plugin/commit/c929e97f050bb8e4d9740dab42016f37fdc88c68))
+
 # [1.14.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.13.0...v1.14.0) (2019-03-11)
 
 
