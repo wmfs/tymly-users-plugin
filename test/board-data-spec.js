@@ -39,8 +39,8 @@ describe('get-board-data tymly-users-plugin tests', function () {
         tymlyService = tymlyServices.tymly
         statebox = tymlyServices.statebox
         client = tymlyServices.storage.client
-        animalModel = tymlyServices.storage.models['test_animal']
-        humanModel = tymlyServices.storage.models['test_human']
+        animalModel = tymlyServices.storage.models.test_animal
+        humanModel = tymlyServices.storage.models.test_human
         boardService = tymlyServices.boards
         formService = tymlyServices.forms
         done()

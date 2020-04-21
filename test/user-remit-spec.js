@@ -267,8 +267,8 @@ describe('user-remit tymly-users-plugin tests', function () {
           teams: [],
           todos: [],
           formNames: {
-            'test_bookSomeoneSick': '0d6decf12e4ced2f862735be6c3df15543075fd8',
-            'processAnExpenseClaim': ''
+            test_bookSomeoneSick: '0d6decf12e4ced2f862735be6c3df15543075fd8',
+            processAnExpenseClaim: ''
           },
           startable: []
         }
@@ -289,7 +289,7 @@ describe('user-remit tymly-users-plugin tests', function () {
     expect(Object.keys(executionDescription.ctx.userRemit.add.forms).includes('test_addIncidentSafetyRecord')).to.eql(true)
     expect(executionDescription.ctx.userRemit.remove.forms)
       .to.eql(['processAnExpenseClaim'])
-    expect(executionDescription.ctx.userRemit.remove.forms['test_bookSomeoneSick']).to.eql(undefined)
+    expect(executionDescription.ctx.userRemit.remove.forms.test_bookSomeoneSick).to.eql(undefined)
   })
 
   it('should add/remove board names to/from the remit', async () => {
@@ -297,8 +297,8 @@ describe('user-remit tymly-users-plugin tests', function () {
       {
         clientManifest: {
           boardNames: {
-            'test_personalDetails': 'WRONGSHASUM',
-            'test_expenses': ''
+            test_personalDetails: 'WRONGSHASUM',
+            test_expenses: ''
           },
           cardNames: {},
           categoryNames: [],
@@ -323,7 +323,7 @@ describe('user-remit tymly-users-plugin tests', function () {
       'test_personalDetails',
       'test_propertyViewer'
     ])
-    expect(executionDescription.ctx.userRemit.add.boards['test_personalDetails'].shasum).to.not.eql('WRONGSHASUM')
+    expect(executionDescription.ctx.userRemit.add.boards.test_personalDetails.shasum).to.not.eql('WRONGSHASUM')
     expect(executionDescription.ctx.userRemit.remove.boards)
       .to.eql(['test_expenses'])
   })
@@ -333,8 +333,8 @@ describe('user-remit tymly-users-plugin tests', function () {
       {
         clientManifest: {
           boardNames: {
-            'test_expenses': '',
-            'test_personalDetails': '7f9187a7193896052bd2a97b42c4bc7a4f4f0b60'
+            test_expenses: '',
+            test_personalDetails: '7f9187a7193896052bd2a97b42c4bc7a4f4f0b60'
           },
           cardNames: {},
           categoryNames: [],

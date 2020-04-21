@@ -143,7 +143,7 @@ describe('notifications tymly-users-plugin tests', function () {
   })
 
   it('should check the notification has been manually created', async () => {
-    const result = await client.query(`select * from tymly.notifications where user_id = 'test-user-1'`)
+    const result = await client.query('select * from tymly.notifications where user_id = \'test-user-1\'')
 
     expect(result.rows[0].user_id).to.eql('test-user-1')
     expect(result.rows[0].description).to.eql('This is a notification used for testing')

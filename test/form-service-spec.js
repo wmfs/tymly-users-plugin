@@ -51,7 +51,7 @@ describe('Form Service tymly-users-plugin tests', function () {
 
   it('should check the properties of the storage model', () => {
     expect(Object.keys(storage.models).includes('test_people')).to.eql(true)
-    expect(storage.models['test_people'].propertyIds).to.eql(['firstName',
+    expect(storage.models.test_people.propertyIds).to.eql(['firstName',
       'lastName',
       'age',
       'dateOfBirth',
@@ -62,7 +62,7 @@ describe('Form Service tymly-users-plugin tests', function () {
   })
 
   it('should check the state machine', () => {
-    expect(statebox.statebox.options.blueprintComponents.stateMachines['test_people_1_0'].Comment).to.eql('A bunch of people.')
+    expect(statebox.statebox.options.blueprintComponents.stateMachines.test_people_1_0.Comment).to.eql('A bunch of people.')
   })
 
   it('should clean up the generated files', () => {

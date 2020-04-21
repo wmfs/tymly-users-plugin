@@ -52,8 +52,8 @@ describe('watched-boards tymly-users-plugin tests', function () {
         categoryLabel: 'Incident Summary',
         description: 'Fire with 0 casualties and 0 fatalities',
         boardKeys: {
-          'incidentNumber': 1,
-          'incidentYear': 1999
+          incidentNumber: 1,
+          incidentYear: 1999
         }
       },
       WATCH_BOARD_STATE_MACHINE,
@@ -101,8 +101,8 @@ describe('watched-boards tymly-users-plugin tests', function () {
         categoryLabel: 'Incident Summary',
         description: 'Fire with 0 casualties and 0 fatalities',
         boardKeys: {
-          'incidentNumber': 12,
-          'incidentYear': 2015
+          incidentNumber: 12,
+          incidentYear: 2015
         }
       },
       WATCH_BOARD_STATE_MACHINE,
@@ -131,7 +131,7 @@ describe('watched-boards tymly-users-plugin tests', function () {
         categoryLabel: 'Property Viewer',
         description: 'Tymly Kebabs, Streetly, B74 3RU',
         boardKeys: {
-          'urn': 4
+          urn: 4
         }
       },
       WATCH_BOARD_STATE_MACHINE,

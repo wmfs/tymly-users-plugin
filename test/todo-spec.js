@@ -39,7 +39,7 @@ describe('todo changes tymly-users-plugin tests', function () {
       (err, tymlyServices) => {
         expect(err).to.eql(null)
         statebox = tymlyServices.statebox
-        todos = tymlyServices.storage.models['tymly_todos']
+        todos = tymlyServices.storage.models.tymly_todos
         tymlyService = tymlyServices.tymly
         client = tymlyServices.storage.client
         done()
