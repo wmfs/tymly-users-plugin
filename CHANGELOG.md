@@ -1,3 +1,20 @@
+# [1.15.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.14.1...v1.15.0) (2020-04-21)
+
+
+### 🐛 Bug Fixes
+
+* Remove done parameter from AwaitingHumanInput.run ([60cefb5](https://github.com/wmfs/tymly-users-plugin/commit/60cefb5e809febe4519951685b59136efa237fe4))
+
+
+### 🛠 Builds
+
+* **deps:** Bump everything ([6b04330](https://github.com/wmfs/tymly-users-plugin/commit/6b04330c22aeeead49f3eb0e6e4df8248a8d78d1))
+
+
+### 📦 Code Refactoring
+
+* Fixes for bump to standard 14 ([f52dff9](https://github.com/wmfs/tymly-users-plugin/commit/f52dff9768f65e6632f485c6062d6fc313e7b7f2))
+
 ## [1.14.1](https://github.com/wmfs/tymly-users-plugin/compare/v1.14.0...v1.14.1) (2020-04-20)
 
 
