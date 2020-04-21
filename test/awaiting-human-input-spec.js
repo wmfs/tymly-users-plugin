@@ -95,8 +95,8 @@ describe('awaitingUserInput state tests', function () {
         title: 'Incident 1/1999',
         description: 'Fire with 0 casualties and 0 fatalities',
         boardKeys: {
-          'incidentNumber': 1,
-          'incidentYear': 1999
+          incidentNumber: 1,
+          incidentYear: 1999
         }
       },
       'tymly_watchBoard_1_0',

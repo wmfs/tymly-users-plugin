@@ -46,11 +46,11 @@ describe('Card Service tests', function () {
     expect(cardService.cards).to.have.own.property('test_simple')
   })
 
-  it(`should expect the simple card to contain it's widgets`, () => {
+  it('should expect the simple card to contain it\'s widgets', () => {
     expect(cardService.cards.test_simple).to.have.own.property('widgets')
   })
 
-  it(`should expect the simple card to contain a shasum`, () => {
+  it('should expect the simple card to contain a shasum', () => {
     expect(cardService.cards.test_simple).to.have.own.property('shasum')
   })
 
