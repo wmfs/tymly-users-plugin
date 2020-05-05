@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/wmfs/tymly-users-plugin/compare/v1.15.0...v1.15.1) (2020-05-05)
+
+
+### 🐛 Bug Fixes
+
+* **services:** Remove redundant boot callback parameters ([dab38c2](https://github.com/wmfs/tymly-users-plugin/commit/dab38c2c3f4fd644f5b2cebfb2cfc75cb96c09b4))
+
 # [1.15.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.14.1...v1.15.0) (2020-04-21)
 
 
