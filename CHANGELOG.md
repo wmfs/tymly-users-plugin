@@ -1,3 +1,15 @@
+# [1.16.0](https://github.com/wmfs/tymly-users-plugin/compare/v1.15.1...v1.16.0) (2020-07-16)
+
+
+### 🛠 Builds
+
+* **deps:** bump lodash from 4.17.15 to 4.17.19 ([6560c62](https://github.com/wmfs/tymly-users-plugin/commit/6560c6292d250acc3d2723e386ddb83238b03291))
+
+
+### ⚙️ Continuous Integrations
+
+* **circle:** use updated circle node image [skip ci] ([ef24d0a](https://github.com/wmfs/tymly-users-plugin/commit/ef24d0a075e77ad9689781cb8a30c0ee06e81732))
+
 ## [1.15.1](https://github.com/wmfs/tymly-users-plugin/compare/v1.15.0...v1.15.1) (2020-05-05)
 
 
