@@ -24,7 +24,7 @@
     "@wmfs/form-maker": "1.4.0",
     "jsonfile": "6.0.1",
     "jsonpath": "1.0.2",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "shasum": "1.0.2"
   },
   "devDependencies": {
